@@ -20,23 +20,23 @@ namespace MyRepoWebApp.Pages
             _context = context;
         }
 
-        public IList<Movie> Movie { get;set; }
+        public IList<Upload> Upload { get;set; }
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
         public SelectList Genres { get; set; }
         [BindProperty(SupportsGet = true)]
-        public string MovieGenre { get; set; }
+        public string UploadGenre { get; set; }
 
         public async Task OnGetAsync()
         {
-            var movies = from m in _context.Movie
+            var Uploads = from m in _context.Upload
                          select m;
             if (!string.IsNullOrEmpty(SearchString))
             {
-                movies = movies.Where(s => s.Title.Contains(SearchString));
+                Uploads = Uploads.Where(s => s.Name.Contains(SearchString));
             }
 
-            Movie = await movies.ToListAsync();
+            Upload = await Uploads.ToListAsync();
         }
     }
 }

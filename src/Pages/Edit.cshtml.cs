@@ -21,7 +21,7 @@ namespace MyRepoWebApp.Pages
         }
 
         [BindProperty]
-        public Movie Movie { get; set; }
+        public Upload Upload { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace MyRepoWebApp.Pages
                 return NotFound();
             }
 
-            Movie = await _context.Movie.FirstOrDefaultAsync(m => m.ID == id);
+            Upload = await _context.Upload.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Movie == null)
+            if (Upload == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace MyRepoWebApp.Pages
                 return Page();
             }
 
-            _context.Attach(Movie).State = EntityState.Modified;
+            _context.Attach(Upload).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace MyRepoWebApp.Pages
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MovieExists(Movie.ID))
+                if (!UploadExists(Upload.ID))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace MyRepoWebApp.Pages
             return RedirectToPage("./Index");
         }
 
-        private bool MovieExists(int id)
+        private bool UploadExists(int id)
         {
-            return _context.Movie.Any(e => e.ID == id);
+            return _context.Upload.Any(e => e.ID == id);
         }
     }
 }

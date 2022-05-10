@@ -14,6 +14,6 @@ namespace MyRepoWebApp.Data
         {
         }
 
-        public DbSet<MyRepoWebApp.Models.Movie> Movie { get; set; }
+        public DbSet<MyRepoWebApp.Models.Upload> Upload { get; set; }
     }
 }

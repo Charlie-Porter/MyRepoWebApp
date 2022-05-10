@@ -8,7 +8,7 @@ namespace MyRepoWebApp.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Movie",
+                name: "Upload",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -20,14 +20,14 @@ namespace MyRepoWebApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Movie", x => x.ID);
+                    table.PrimaryKey("PK_Upload", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Movie");
+                name: "Upload");
         }
     }
 }

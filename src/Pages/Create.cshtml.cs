@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -25,7 +26,7 @@ namespace MyRepoWebApp.Pages
         }
 
         [BindProperty]
-        public Movie Movie { get; set; }
+        public Upload Upload { get; set; }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.
@@ -36,10 +37,14 @@ namespace MyRepoWebApp.Pages
                 return Page();
             }
 
-            _context.Movie.Add(Movie);
+            _context.Upload.Add(Upload);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }
+
+        // extension method
+      
+
     }
 }

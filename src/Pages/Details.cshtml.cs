@@ -19,7 +19,7 @@ namespace MyRepoWebApp.Pages
             _context = context;
         }
 
-        public Movie Movie { get; set; }
+        public Upload Upload { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,9 @@ namespace MyRepoWebApp.Pages
                 return NotFound();
             }
 
-            Movie = await _context.Movie.FirstOrDefaultAsync(m => m.ID == id);
+            Upload = await _context.Upload.FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Movie == null)
+            if (Upload == null)
             {
                 return NotFound();
             }
