@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using MyRepoWebApp.Data;
 
 namespace MyRepoWebApp
 {
@@ -22,6 +24,9 @@ namespace MyRepoWebApp
             services.AddHttpClient();
             services.AddControllers();
             services.AddTransient<JsonFileProductService>();
+
+            services.AddDbContext<MyRepoWebAppContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("MyRepoWebAppContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
