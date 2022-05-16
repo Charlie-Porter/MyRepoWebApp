@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -20,7 +19,7 @@ namespace MyRepoWebApp.Pages
             _context = context;
         }
 
-        public IList<Upload> Upload { get;set; }
+        public IList<Models.UploadModel> Upload { get;set; }
         [BindProperty(SupportsGet = true)]
         public string SearchString { get; set; }
         public SelectList Genres { get; set; }

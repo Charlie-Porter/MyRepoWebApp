@@ -21,7 +21,7 @@ namespace MyRepoWebApp.Pages
         }
 
         [BindProperty]
-        public Upload Upload { get; set; }
+        public Models.UploadModel Upload { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

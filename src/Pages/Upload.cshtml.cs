@@ -4,47 +4,28 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using MyRepoWebApp.Data;
 using MyRepoWebApp.Models;
 
 namespace MyRepoWebApp.Pages
 {
-    public class CreateModel : PageModel
+    public class UploadModel : PageModel
     {
-       // private IHostingEnvironment ihostingEnvironment;
-        private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
-
-        public string FileName { get; set; }
-
-        public CreateModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
-        {
-           // this.ihostingEnvironment = ihostingEnvironment;
-            _context = context;
-        }
-
-        /* public void OnPost(IFormFile photo)
-         {
-             var path = Path.Combine(ihostingEnvironment.WebRootPath, "images", photo.FileName);
-             var stream = new FileStream(path, FileMode.Create);
-             photo.CopyToAsync(stream);
-             FileName = photo.FileName;
-         }
- */
-
-
-
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
-
         [BindProperty]
         public BufferedSingleFileUploadDb FileUpload { get; set; }
+        private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
+
+        public void OnGet()
+        {
+        }
+
+        public UploadModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
+        {
+            // this.ihostingEnvironment = ihostingEnvironment;
+            _context = context;
+        }
 
         public class BufferedSingleFileUploadDb
         {
@@ -53,10 +34,7 @@ namespace MyRepoWebApp.Pages
             public IFormFile FormFile { get; set; }
         }
 
-
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostUploadAsync()
         {
             using (var memoryStream = new MemoryStream())
             {
@@ -78,13 +56,9 @@ namespace MyRepoWebApp.Pages
                 {
                     ModelState.AddModelError("File", "The file is too large.");
                 }
-            }          
+            }
 
-            return RedirectToPage("./Index");
+            return Page();
         }
-
-        // extension method
-      
-
     }
 }

@@ -1,5 +1,4 @@
-﻿using MyRepoWebApp.Services;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +22,7 @@ namespace MyRepoWebApp
             services.AddServerSideBlazor();
             services.AddHttpClient();
             services.AddControllers();
-            services.AddTransient<JsonFileProductService>();
+            
 
             services.AddDbContext<MyRepoWebAppContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("MyRepoWebAppContext")));

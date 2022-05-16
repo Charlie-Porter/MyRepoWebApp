@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MyRepoWebApp.Models
 {
-    public class Upload
+    public class UploadModel
     {        
         public int ID { get; set; }
         public string Name { get; set; } = string.Empty;
