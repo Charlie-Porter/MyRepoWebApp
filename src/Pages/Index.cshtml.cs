@@ -7,9 +7,11 @@ using Microsoft.EntityFrameworkCore;
 using MyRepoWebApp.Data;
 using MyRepoWebApp.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyRepoWebApp.Pages
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
@@ -18,6 +20,7 @@ namespace MyRepoWebApp.Pages
         {
             _context = context;
         }
+
 
         public IList<Models.UploadModel> Upload { get;set; }
         [BindProperty(SupportsGet = true)]
