@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyRepoWebApp.Data;
 
 namespace MyRepoWebApp.Migrations
 {
     [DbContext(typeof(MyRepoWebAppContext))]
-    partial class MyRepoWebAppContextModelSnapshot : ModelSnapshot
+    [Migration("20220519211447_CredentialModel")]
+    partial class CredentialModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -62,10 +64,6 @@ namespace MyRepoWebApp.Migrations
 
                     b.Property<byte[]>("contents")
                         .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("owner")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
 

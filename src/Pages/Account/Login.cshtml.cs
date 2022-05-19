@@ -16,21 +16,27 @@ namespace MyRepoWebApp.Pages.Account
         [BindProperty]
         public CredentialModel Credential { get; set; }
 
+        private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
+
+        public LoginModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
+        {
+            _context = context;
+        }
+
         public void OnGet()
         {
         }
 
-
-        
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid) return Page();
 
-            if(Credential.Username == "admin" && Credential.Password == "password")
+            //if(Credential.Username == "admin" && Credential.Password == "password")
+            if(CredentialModelUsernameExists(Credential.Username, Credential.Password))
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, "admin"),
+                    new Claim(ClaimTypes.Name, Credential.Username),
                     new Claim(ClaimTypes.Email, "admin@mywebsite.com")
                 };
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");
@@ -46,6 +52,11 @@ namespace MyRepoWebApp.Pages.Account
                 return RedirectToPage("/Index");
             }
             return Page();
+        }
+
+        private bool CredentialModelUsernameExists(String Username, String Password)
+        {
+            return _context.CredentialModel.Any(e => e.Username == Username) && _context.CredentialModel.Any(c => c.Password == Password);
         }
 
     }

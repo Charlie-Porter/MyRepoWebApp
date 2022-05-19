@@ -5,19 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyRepoWebApp.Data;
 using MyRepoWebApp.Models;
 
-namespace MyRepoWebApp.Pages
+namespace MyRepoWebApp.Pages.Photos
 {
     [Authorize]
-    public class EditModel : PageModel
+    public class DeleteModel : PageModel
     {
         private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
 
-        public EditModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
+        public DeleteModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
         {
             _context = context;
         }
@@ -41,39 +40,22 @@ namespace MyRepoWebApp.Pages
             return Page();
         }
 
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (!ModelState.IsValid)
+            if (id == null)
             {
-                return Page();
+                return NotFound();
             }
 
-            _context.Attach(Upload).State = EntityState.Modified;
+            Upload = await _context.Upload.FindAsync(id);
 
-            try
+            if (Upload != null)
             {
+                _context.Upload.Remove(Upload);
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UploadExists(Upload.ID))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
             }
 
             return RedirectToPage("./Index");
-        }
-
-        private bool UploadExists(int id)
-        {
-            return _context.Upload.Any(e => e.ID == id);
         }
     }
 }

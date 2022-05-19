@@ -10,12 +10,16 @@ namespace MyRepoWebApp.Models
     public class UploadModel
     {        
         public int ID { get; set; }
-        public string Name { get; set; } = string.Empty;
+        [Required]        
+        public string Name { get; set; } = string.Empty;      
+        public string owner { get; set; } = string.Empty;
 
+        [Required]
         [Display(Name = "Updated Date")]
         [DataType(DataType.Date)]
         public DateTime UpdateDate { get; set; }
         public string Type { get; set; } = string.Empty;
+        [Required]
         public byte[]? contents { get; set; }
     }
 }

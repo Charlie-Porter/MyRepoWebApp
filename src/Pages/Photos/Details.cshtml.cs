@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using MyRepoWebApp.Data;
 using MyRepoWebApp.Models;
 
-namespace MyRepoWebApp.Pages
+namespace MyRepoWebApp.Pages.Photos
 {
     [Authorize]
     public class DetailsModel : PageModel

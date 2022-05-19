@@ -1,0 +1,59 @@
+﻿@page
+@model MyRepoWebApp.Pages.Photos.PhotosModel
+
+@{
+    ViewData["Title"] = "Photos";
+}
+
+    <form>
+        <p>
+            Title: <input type="text" asp-for="SearchString" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+
+<p>
+    <a asp-page="Upload">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Upload[0].ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Upload[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Upload[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Upload[0].UpdateDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Upload) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateDate)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

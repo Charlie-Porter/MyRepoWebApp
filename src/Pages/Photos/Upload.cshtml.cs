@@ -10,10 +10,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyRepoWebApp.Models;
 
-namespace MyRepoWebApp.Pages
+namespace MyRepoWebApp.Pages.Photos
 {
     [Authorize]
-    public class UploadModel : PageModel
+    public class UploadModel : PageModel 
     {
         [BindProperty]
         public BufferedSingleFileUploadDb FileUpload { get; set; }
@@ -24,12 +24,13 @@ namespace MyRepoWebApp.Pages
         }
         [BindProperty]
         public Models.UploadModel uploadModel { get; set; }
-        
+
         public UploadModel(Data.MyRepoWebAppContext context)
         {
             // this.ihostingEnvironment = ihostingEnvironment;
             _context = context;
         }
+
 
         public class BufferedSingleFileUploadDb
         {
@@ -55,6 +56,7 @@ namespace MyRepoWebApp.Pages
 
                     file.Name = FileUpload.FormFile.FileName;
                     file.UpdateDate = System.DateTime.Now;
+                    file.owner = User.Identity.Name;
 
                     _context.Upload.Add(file);
                     

@@ -1,0 +1,37 @@
+﻿@page
+@model MyRepoWebApp.Pages.Account.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>CredentialModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CredentialModel.Username)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CredentialModel.Username)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CredentialModel.Password)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CredentialModel.Password)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CredentialModel.RememberMe)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CredentialModel.RememberMe)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.CredentialModel.UserId">Edit</a> |
+    <a asp-page="./Users">Back to List</a>
+</div>
