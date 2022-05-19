@@ -15,6 +15,9 @@ namespace MyRepoWebApp.Models
             [Required]
             [DataType(DataType.Password)]
             public string Password { get; set; }
-        }
+            
+            [Display(Name = "Remeber Me")]
+            public bool RememberMe { get; set; }
+    }
     
 }

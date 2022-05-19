@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using MyRepoWebApp.Data;
+using System;
 
 namespace MyRepoWebApp
 {
@@ -24,6 +25,7 @@ namespace MyRepoWebApp
             {
                 options.Cookie.Name = "MyCookieAuth";
                 options.LoginPath = "/Account/Login";
+                options.ExpireTimeSpan = TimeSpan.FromHours(1);
             });
             services.AddRazorPages();
             services.AddServerSideBlazor();
