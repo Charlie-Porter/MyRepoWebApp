@@ -14,8 +14,8 @@ namespace MyRepoWebApp.Models
             public long UserId { get; set; }
             
             [Required]
-            [Display(Name = "User Name")]
-            public string Username { get; set; }
+            [Display(Name = "Email")]
+            public string Email { get; set; }
             
             [Required]
             [DataType(DataType.Password)]

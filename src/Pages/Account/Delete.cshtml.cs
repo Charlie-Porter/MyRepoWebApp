@@ -52,8 +52,15 @@ namespace MyRepoWebApp.Pages.Account
 
             if (CredentialModel != null)
             {
+               if(CredentialModel.Email == User.Identity.Name)
+                {
+                    ModelState.AddModelError("UnableToDeleteLoggedInUser", "Unable to delete logged in user");
+                    return Page();
+                }
+                
                 _context.CredentialModel.Remove(CredentialModel);
                 await _context.SaveChangesAsync();
+
             }
 
             return RedirectToPage("./Users");

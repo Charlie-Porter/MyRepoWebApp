@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.CredentialModel[0].Username)
+                @Html.DisplayNameFor(model => model.CredentialModel[0].Email)
             </th>
             <th></th>
         </tr>
@@ -23,7 +23,7 @@
 @foreach (var item in Model.CredentialModel) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Username)
+                @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.UserId">Edit</a> |
