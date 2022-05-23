@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,13 +10,15 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MyRepoWebApp.Data;
 using MyRepoWebApp.Models;
+using MyRepoWebApp.Services;
 
 namespace MyRepoWebApp.Pages.Account
 {
-    [Authorize]
+    [Authorize(Policy = "AdminOnly")]
     public class EditModel : PageModel
     {
         private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
+        RNGCryptoServiceProvider _rng = new RNGCryptoServiceProvider();
 
         public EditModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
         {
@@ -54,6 +57,7 @@ namespace MyRepoWebApp.Pages.Account
 
             try
             {
+                CredentialModel.Password = Convert.ToBase64String(SecurityService.HashPasswordV2(CredentialModel.Password, _rng));
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)

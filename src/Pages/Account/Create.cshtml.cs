@@ -10,13 +10,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MyRepoWebApp.Data;
 using MyRepoWebApp.Models;
+using MyRepoWebApp.Services;
 
 namespace MyRepoWebApp.Pages.Account
 {
-    
+    [Authorize(Policy = "AdminOnly")]
     public class CreateModel : PageModel
     {
-        private readonly RandomNumberGenerator _rng;
+        RNGCryptoServiceProvider _rng = new RNGCryptoServiceProvider();
         private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
 
         public CreateModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
@@ -51,9 +52,11 @@ namespace MyRepoWebApp.Pages.Account
             {
                 throw new ArgumentNullException(nameof(CredentialModel.Password));
             }
-            RNGCryptoServiceProvider _rng = new RNGCryptoServiceProvider();
+
             // derive a 256-bit subkey (use HMACSHA256 with 100,000 iterations)
-            CredentialModel.Password = Convert.ToBase64String(HashPasswordV2(CredentialModel.Password, _rng));
+            //CredentialModel.Password = Convert.ToBase64String(HashPasswordV2(CredentialModel.Password, _rng));
+
+            CredentialModel.Password = Convert.ToBase64String(SecurityService.HashPasswordV2(CredentialModel.Password, _rng));
 
             _context.CredentialModel.Add(CredentialModel);
             await _context.SaveChangesAsync();
@@ -66,7 +69,7 @@ namespace MyRepoWebApp.Pages.Account
             return _context.CredentialModel.Any(e => e.Email == Email);
         }
 
-        private static byte[] HashPasswordV2(string password, RandomNumberGenerator rng)
+      /*  private static byte[] HashPasswordV2(string password, RandomNumberGenerator rng)
         {
             const KeyDerivationPrf Pbkdf2Prf = KeyDerivationPrf.HMACSHA1; // default for Rfc2898DeriveBytes
             const int Pbkdf2IterCount = 1000; // default for Rfc2898DeriveBytes
@@ -84,6 +87,6 @@ namespace MyRepoWebApp.Pages.Account
             Buffer.BlockCopy(subkey, 0, outputBytes, 1 + SaltSize, Pbkdf2SubkeyLength);
             return outputBytes;
         }
-
+*/
     }
 }

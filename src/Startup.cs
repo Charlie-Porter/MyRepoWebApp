@@ -26,6 +26,14 @@ namespace MyRepoWebApp
                 options.Cookie.Name = "MyCookieAuth";
                 options.LoginPath = "/Account/Login";
                 options.ExpireTimeSpan = TimeSpan.FromHours(1);
+                options.AccessDeniedPath = "/Account/AccessDenied";
+            });
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("AdminOnly",
+                    policy => policy.RequireClaim("Admin", "True"));
+
             });
             services.AddRazorPages();
             services.AddServerSideBlazor();

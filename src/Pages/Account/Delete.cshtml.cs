@@ -11,7 +11,7 @@ using MyRepoWebApp.Models;
 
 namespace MyRepoWebApp.Pages.Account
 {
-    [Authorize]
+    [Authorize(Policy = "AdminOnly")]
     public class DeleteModel : PageModel
     {
 

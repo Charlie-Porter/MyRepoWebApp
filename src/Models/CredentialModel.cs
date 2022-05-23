@@ -14,7 +14,7 @@ namespace MyRepoWebApp.Models
             public long UserId { get; set; }
             
             [Required]
-            [Display(Name = "Email")]
+            [EmailAddress]        
             public string Email { get; set; }
             
             [Required]
@@ -23,6 +23,9 @@ namespace MyRepoWebApp.Models
             
             [Display(Name = "Remeber Me")]
             public bool RememberMe { get; set; }
+
+            [Required]
+            public bool Admin { get; set; }
     }
     
 }

@@ -20,7 +20,7 @@ namespace MyRepoWebApp.Pages.Account
         public CredentialModel Credential { get; set; }
 
         private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
-
+        private CredentialModel doesUserExistinDB;
         public LoginModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
         {
             _context = context;
@@ -38,9 +38,10 @@ namespace MyRepoWebApp.Pages.Account
             if(CredentialModelUsernameExists(Credential.Email, Credential.Password))
             {
                 var claims = new List<Claim>
-                {
+                {         
                     new Claim(ClaimTypes.Name, Credential.Email),
-                    new Claim(ClaimTypes.Email, Credential.Email)
+                    new Claim(ClaimTypes.Email, Credential.Email),
+                    new Claim("Admin", doesUserExistinDB.Admin.ToString())
                 };
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
@@ -60,7 +61,7 @@ namespace MyRepoWebApp.Pages.Account
         private bool CredentialModelUsernameExists(String Email, String Password)
         {
             
-            var doesUserExistinDB = _context.CredentialModel.Where(a => a.Email.Equals(Email)).FirstOrDefault();
+            doesUserExistinDB = _context.CredentialModel.Where(a => a.Email.Equals(Email)).FirstOrDefault();
 
             if (doesUserExistinDB != null) {
 
@@ -69,8 +70,7 @@ namespace MyRepoWebApp.Pages.Account
                     return true;
                 } 
             }
-            return false;
-            //return _context.CredentialModel.Any(e => e.Email == Email) && _context.CredentialModel.Any(c => c.Password == Password);
+            return false;            
         }
 
         private readonly PasswordHasherCompatibilityMode _compatibilityMode;

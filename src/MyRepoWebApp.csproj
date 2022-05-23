@@ -22,7 +22,6 @@
   <ItemGroup>
     <Folder Include="Components\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Services\" />
     <Folder Include="wwwroot\data\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
