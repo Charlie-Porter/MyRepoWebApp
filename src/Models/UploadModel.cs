@@ -9,6 +9,8 @@ namespace MyRepoWebApp.Models
 {
     public class UploadModel
     {        
+        [Required]
+        [Key]
         public int ID { get; set; }
         [Required]        
         public string Name { get; set; } = string.Empty;      
@@ -19,6 +21,10 @@ namespace MyRepoWebApp.Models
         [DataType(DataType.Date)]
         public DateTime UpdateDate { get; set; }
         public string Type { get; set; } = string.Empty;
+        
+        [Required]
+        public int FolderId { get; set; } 
+
         [Required]
         public byte[]? contents { get; set; }
     }

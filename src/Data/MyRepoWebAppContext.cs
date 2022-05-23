@@ -17,5 +17,7 @@ namespace MyRepoWebApp.Data
         public DbSet<MyRepoWebApp.Models.UploadModel> Upload { get; set; }
 
         public DbSet<MyRepoWebApp.Models.CredentialModel> CredentialModel { get; set; }
+
+        public DbSet<MyRepoWebApp.Models.FolderModel> FolderModel { get; set; }
     }
 }

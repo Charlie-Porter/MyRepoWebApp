@@ -10,8 +10,8 @@ using MyRepoWebApp.Data;
 namespace MyRepoWebApp.Migrations
 {
     [DbContext(typeof(MyRepoWebAppContext))]
-    [Migration("20220510195626_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220523212340_FolderModel")]
+    partial class FolderModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,24 +21,52 @@ namespace MyRepoWebApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MyRepoWebApp.Models.Upload", b =>
+            modelBuilder.Entity("MyRepoWebApp.Models.FolderModel", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("owner")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Name");
+
+                    b.ToTable("FolderModel");
+                });
+
+            modelBuilder.Entity("MyRepoWebApp.Models.UploadModel", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Genre")
+                    b.Property<int>("FolderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ReleaseDate")
+                    b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Title")
+                    b.Property<byte[]>("contents")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("owner")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

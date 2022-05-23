@@ -13,7 +13,7 @@
     </form>
 
 <p>
-    <a asp-page="Upload">Create New</a>
+    <a asp-page="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -30,6 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Upload[0].UpdateDate)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Upload[0].contents)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -41,12 +44,16 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
-            </td>            
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Type)
-            </td>            
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UpdateDate)
+            </td>
+            <td>
+                <img src="data:image;base64,@System.Convert.ToBase64String(item.contents)" width="80" height="80" />
+                @*  @Html.DisplayFor(modelItem => item.contents)*@
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |

@@ -84,13 +84,13 @@ namespace MyRepoWebApp.Services
 
             // Hash the incoming password and verify it
             byte[] actualSubkey = KeyDerivation.Pbkdf2(password, salt, Pbkdf2Prf, Pbkdf2IterCount, Pbkdf2SubkeyLength);
-            #if NETSTANDARD2_0 || NETFRAMEWORK
-                                return ByteArraysEqual(actualSubkey, expectedSubkey);
-            #elif NETCOREAPP
+/*            #if NETSTANDARD2_0 || NETFRAMEWORK
+                        return ByteArraysEqual(actualSubkey, expectedSubkey);
+            #elif NETCOREAPP*/
                         return CryptographicOperations.FixedTimeEquals(actualSubkey, expectedSubkey);
-            #else
+/*            #else
             #error Update target frameworks
-            #endif
+            #endif*/
         }
     }
 }

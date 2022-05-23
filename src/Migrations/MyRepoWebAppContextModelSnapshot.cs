@@ -26,6 +26,9 @@ namespace MyRepoWebApp.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Admin")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -37,12 +40,29 @@ namespace MyRepoWebApp.Migrations
                     b.Property<bool>("RememberMe")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("admin")
-                        .HasColumnType("bit");
-
                     b.HasKey("UserId");
 
                     b.ToTable("CredentialModel");
+                });
+
+            modelBuilder.Entity("MyRepoWebApp.Models.FolderModel", b =>
+                {
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ID")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("owner")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Name");
+
+                    b.ToTable("FolderModel");
                 });
 
             modelBuilder.Entity("MyRepoWebApp.Models.UploadModel", b =>
@@ -51,6 +71,9 @@ namespace MyRepoWebApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("FolderId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
