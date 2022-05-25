@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using MyRepoWebApp.Data;
 using System;
+using MyRepoWebApp.Services;
+using MyRepoWebApp.Interfaces;
 
 namespace MyRepoWebApp
 {
@@ -21,6 +23,10 @@ namespace MyRepoWebApp
 
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //Add SendGrid email sender
+            services.AddSendGridEmailSender();
+
             services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
             {
                 options.Cookie.Name = "MyCookieAuth";
@@ -72,6 +78,9 @@ namespace MyRepoWebApp
                 endpoints.MapControllers();
                 endpoints.MapBlazorHub();
             });
+            app.ApplicationServices.GetService<IEmailSender>().SendEmailAsync(new Models.SendEmailDetails { });
+            app.ApplicationServices.GetService<IEmailSender>().SendEmailAsync(new Models.SendEmailDetails { });
+            
         }
     }
 }

@@ -22,6 +22,7 @@
   <ItemGroup>
     <Folder Include="Components\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Email\" />
     <Folder Include="wwwroot\data\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
