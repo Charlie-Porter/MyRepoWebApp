@@ -8,11 +8,11 @@ namespace MyRepoWebApp.Models
 {
     public class FolderModel
     {
-        [Required]        
-        public int ID { get; set; }
-
         [Required]
         [Key]
+        public long ID { get; set; }
+
+        [Required]
         public string Name { get; set; } = string.Empty;
 
         [Required] 

@@ -54,7 +54,7 @@ namespace MyRepoWebApp.Pages.Account
                 
 
                 await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal, authProperties);
-                return RedirectToPage("/Index");
+                return RedirectToPage("/Folders/Folders");
             }
             return Page();
         }

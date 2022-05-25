@@ -3,30 +3,31 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MyRepoWebApp.Migrations
 {
-    public partial class FolderModel : Migration
+    public partial class CredentialModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
-        {           
-
+        {
+           
             migrationBuilder.CreateTable(
                 name: "FolderModel",
                 columns: table => new
                 {
+                    ID = table.Column<long>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
-                    ID = table.Column<int>(nullable: false),
                     owner = table.Column<string>(nullable: false),
                     UpdateDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FolderModel", x => x.Name);
+                    table.PrimaryKey("PK_FolderModel", x => x.ID);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Upload",
                 columns: table => new
                 {
-                    ID = table.Column<int>(nullable: false)
+                    ID = table.Column<long>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
                     owner = table.Column<string>(nullable: false),

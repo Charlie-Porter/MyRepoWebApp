@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,6 +12,7 @@ using MyRepoWebApp.Models;
 
 namespace MyRepoWebApp.Pages.Folders
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
@@ -21,7 +23,7 @@ namespace MyRepoWebApp.Pages.Folders
         }
 
         [BindProperty]
-        public FolderModel FolderModel { get; set; }
+        public Models.FolderModel FolderModel { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -69,7 +71,7 @@ namespace MyRepoWebApp.Pages.Folders
             return RedirectToPage("./Index");
         }
 
-        private bool FolderModelExists(int id)
+        private bool FolderModelExists(long id)
         {
             return _context.FolderModel.Any(e => e.ID == id);
         }

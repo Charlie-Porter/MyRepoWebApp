@@ -21,6 +21,10 @@ namespace MyRepoWebApp.Pages.Photos
             _context = context;
         }
 
+        [TempData]
+        public int folderId { get; set; }
+
+     
 
         public IList<Models.UploadModel> Upload { get;set; }
         [BindProperty(SupportsGet = true)]
@@ -29,16 +33,29 @@ namespace MyRepoWebApp.Pages.Photos
         [BindProperty(SupportsGet = true)]
         public string UploadGenre { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(int Id)
         {
-            var Uploads = from m in _context.Upload where m.owner == User.Identity.Name
-                         select m;
-            if (!string.IsNullOrEmpty(SearchString))
+            if (Request.QueryString.ToString().Contains("id"))
             {
-                Uploads = Uploads.Where(s => s.Name.Contains(SearchString));
-            }
 
-            Upload = await Uploads.ToListAsync();
+                folderId = Id;
+
+                var Uploads = from m in _context.Upload
+                              where m.owner == User.Identity.Name
+                              where m.FolderId == folderId
+                              select m;
+                if (!string.IsNullOrEmpty(SearchString))
+                {
+                    Uploads = Uploads.Where(s => s.Name.Contains(SearchString));
+                }
+
+                Upload = await Uploads.ToListAsync();
+            }
+            else
+            {
+                RedirectToPage("/Folders/Folders");
+            }
         }
+
     }
 }

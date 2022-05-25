@@ -23,7 +23,7 @@ namespace MyRepoWebApp.Pages.Photos
 
         public Models.UploadModel Upload { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(long? id)
         {
             if (id == null)
             {

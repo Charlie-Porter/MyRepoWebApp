@@ -12,9 +12,9 @@
         </p>
     </form>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+    <p>
+        <a class="btn btn-secondary" asp-page="../Folders">Upload</a>
+    </p>
 <table class="table">
     <thead>
         <tr>
@@ -28,10 +28,13 @@
                 @Html.DisplayNameFor(model => model.Upload[0].Type)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Upload[0].FolderId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Upload[0].UpdateDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Upload[0].contents)
+                Photo
             </th>
             <th></th>
         </tr>
@@ -49,16 +52,19 @@
                 @Html.DisplayFor(modelItem => item.Type)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.FolderId)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.UpdateDate)
             </td>
             <td>
                 <img src="data:image;base64,@System.Convert.ToBase64String(item.contents)" width="80" height="80" />
-                @*  @Html.DisplayFor(modelItem => item.contents)*@
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                <a class="btn btn-outline-light" download="@item.Name" href="data:@item.Type;base64,@System.Convert.ToBase64String(item.contents)">Download</a> 
+                <a class="btn btn-outline-light" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> 
+                <a class="btn btn-outline-light" asp-page="./Details" asp-route-id="@item.ID">Details</a> 
+                <a class="btn btn-outline-light" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
 }

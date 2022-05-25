@@ -19,16 +19,21 @@ namespace MyRepoWebApp.Pages.Photos
         [BindProperty]
         public BufferedSingleFileUploadDb FileUpload { get; set; }
         private readonly Data.MyRepoWebAppContext _context;
-
-        [TempData]
+        
+        [BindProperty, TempData]
         public int folderId { get; set; }
 
         public void OnGet(int Id)
         {
-            folderId = Id;
+            if (Request.QueryString.ToString().Contains("id"))
+            {
+                folderId = Id;
+            }
+            else
+            {
+                ModelState.AddModelError("FolderDoesNotExist", "The folder is invalid, please navigate to the folder page and try again!");
+            }                        
         }
-
-        
 
         public UploadModel(Data.MyRepoWebAppContext context)
         {
@@ -48,38 +53,51 @@ namespace MyRepoWebApp.Pages.Photos
 
         public async Task<IActionResult> OnPostUploadAsync()
         {
-            using (var memoryStream = new MemoryStream())
+            if (folderId > 0)
             {
-                await FileUpload.FormFile.CopyToAsync(memoryStream);
 
-                // Upload the file if less than 2 MB
-                if (memoryStream.Length < 2097152)
+
+                using (var memoryStream = new MemoryStream())
                 {
-                    var file = new Models.UploadModel()
+                    await FileUpload.FormFile.CopyToAsync(memoryStream);
+
+                    // Upload the file if less than 2 MB
+                    if (memoryStream.Length < 2097152)
                     {
-                        contents = memoryStream.ToArray()
-                      
-                    };
+                        var file = new Models.UploadModel()
+                        {
+                            contents = memoryStream.ToArray()
 
-                    file.Name = FileUpload.FormFile.FileName;
-                    file.UpdateDate = System.DateTime.Now;
-                    file.owner = User.Identity.Name;
-                    file.FolderId = folderId;
+                        };
+
+                        file.Name = FileUpload.FormFile.FileName;
+                        file.UpdateDate = System.DateTime.Now;
+                        file.owner = User.Identity.Name;
+                        file.FolderId = folderId;
+                        file.Type = FileUpload.FormFile.ContentType;
 
 
 
-                    _context.Upload.Add(file);
-                    
-                    await _context.SaveChangesAsync();
-                   
+                        _context.Upload.Add(file);
+
+                        await _context.SaveChangesAsync();
+
+
+                    }
+                    else
+                    {
+                        return RedirectToPage("/Folders/Folders");
+
+                    }
                 }
-                else
-                {
-                    ModelState.AddModelError("File", "The file is too large.");
-                }
+
+                return RedirectToPage("/Folders/Folders");
             }
-
-            return Page();
+            else
+            {
+                ModelState.AddModelError("FolderDoesNotExist", "The folder is invalid, please navigate to the folder page and try again!");
+                return Page();
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace MyRepoWebApp.Migrations
 {
-    public partial class Upload : Migration
+    public partial class UploadModel : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

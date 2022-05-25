@@ -10,8 +10,8 @@ using MyRepoWebApp.Data;
 namespace MyRepoWebApp.Migrations
 {
     [DbContext(typeof(MyRepoWebAppContext))]
-    [Migration("20220523212428_Upload")]
-    partial class Upload
+    [Migration("20220524084645_UploadModel")]
+    partial class UploadModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,11 +49,14 @@ namespace MyRepoWebApp.Migrations
 
             modelBuilder.Entity("MyRepoWebApp.Models.FolderModel", b =>
                 {
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<long>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ID")
-                        .HasColumnType("int");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("datetime2");
@@ -62,16 +65,16 @@ namespace MyRepoWebApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Name");
+                    b.HasKey("ID");
 
                     b.ToTable("FolderModel");
                 });
 
             modelBuilder.Entity("MyRepoWebApp.Models.UploadModel", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("FolderId")

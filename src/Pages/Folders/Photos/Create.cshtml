@@ -3,29 +3,27 @@
 @{
 }
 
-<h1>Create</h1>
+<h1>Upload Photo</h1>
 
 <div class="row">
     <div class="col-md-4">
         <form enctype="multipart/form-data" method="post">
             <dl>
                 <dt>
-                    <label asp-for="FileUpload.FormFile"></label>
+                    <label>Folder Id = @Model.folderId</label>
                 </dt>
+                <p align="left" style="color:red">@Html.ValidationMessage("FolderDoesNotExist")</p>
                 <dd>
                     <input asp-for="FileUpload.FormFile" type="file" accept="image/jpeg,  image/jpg">
                 </dd>
-                <dd>
-                    <label asp-for="folderId" class="control-label"></label>
-                </dd>
             </dl>
-            <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload">
+            <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload" CausesValidation="true" asp-validation-for="@Model.folderId">
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-page="./Folders/Photos/Photos">Back to List</a>
+    <a class="btn btn-outline-success" asp-page="/Folders/Folders">Back to List</a>
 </div>
 
 @section Scripts {

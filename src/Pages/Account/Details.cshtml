@@ -8,7 +8,7 @@
 <h1>Details</h1>
 
 <div>
-    <h4>CredentialModel</h4>
+    <h4>Accounts</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -26,6 +26,6 @@
     </dl>
 </div>
 <div>
-    <a asp-page="./Edit" asp-route-id="@Model.CredentialModel.UserId">Edit</a> |
-    <a asp-page="./Users">Back to List</a>
+    <a class="btn btn-outline-light" asp-page="./Edit" asp-route-id="@Model.CredentialModel.UserId">Edit</a> 
+    <a class="btn btn-outline-success" asp-page="./Users">Back to List</a>
 </div>

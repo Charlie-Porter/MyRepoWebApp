@@ -71,7 +71,7 @@ namespace MyRepoWebApp.Pages.Photos
             return RedirectToPage("./Index");
         }
 
-        private bool UploadExists(int id)
+        private bool UploadExists(long id)
         {
             return _context.Upload.Any(e => e.ID == id);
         }
