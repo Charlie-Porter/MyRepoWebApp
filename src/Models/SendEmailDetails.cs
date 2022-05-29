@@ -13,7 +13,7 @@ namespace MyRepoWebApp.Models
         public string toEmail{ get; set; }
         public string subject { get; set; }
         public string content{ get; set; }
-        public string isHTML{ get; set; }
+        public bool isHTML{ get; set; }
 
 
     }

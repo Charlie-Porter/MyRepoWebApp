@@ -8,6 +8,10 @@ using MyRepoWebApp.Data;
 using System;
 using MyRepoWebApp.Services;
 using MyRepoWebApp.Interfaces;
+using MyRepoWebApp.Services.Templates;
+using MyRepoWebApp.IoC;
+using Dna;
+using Dna.AspNet;
 
 namespace MyRepoWebApp
 {
@@ -26,6 +30,9 @@ namespace MyRepoWebApp
 
             //Add SendGrid email sender
             services.AddSendGridEmailSender();
+
+            // Add general template sender
+            services.AddEmailTemplateSender();
 
             services.AddAuthentication("MyCookieAuth").AddCookie("MyCookieAuth", options =>
             {
@@ -52,8 +59,12 @@ namespace MyRepoWebApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
+            // Use Dna Framework
+            app.UseDnaFramework();
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -78,9 +89,37 @@ namespace MyRepoWebApp
                 endpoints.MapControllers();
                 endpoints.MapBlazorHub();
             });
-            app.ApplicationServices.GetService<IEmailSender>().SendEmailAsync(new Models.SendEmailDetails { });
-            app.ApplicationServices.GetService<IEmailSender>().SendEmailAsync(new Models.SendEmailDetails { });
+            /* app.ApplicationServices.GetService<IEmailSender>().SendEmailAsync(new Models.SendEmailDetails
+             {
+                 content = "This is out first HTML email",
+                 fromEmail = "82cplll@outlook.com",
+                 fromName = "charlie",
+                 toEmail = "82cpllll@outlook.com",
+                 toName = "me",
+                 isHTML = true,
+                 subject = "This is sent from my web app"
+
+
+             });
+          */
             
+            IoC.IoC.EmailTemplateSender.SendGeneralEmailAsync(new Models.SendEmailDetails
+            {
+                content = "This is out first HTML email",
+                fromEmail = "82cp@outlook.com",
+                fromName = "charlie",
+                toEmail = "82cp@outlook.com",
+                toName = "me",
+                isHTML = true,
+                subject = "This is sent from my web app"
+            }, 
+            "Verify Email", 
+            "Hi Luke,",
+            "Thanks for creating an account with us. <br/>To continue, please verify your email with us.",
+            "Verify Email",
+            "https://myrepowebappravor.azurewebsites.net/)");
+
+        
         }
     }
 }
