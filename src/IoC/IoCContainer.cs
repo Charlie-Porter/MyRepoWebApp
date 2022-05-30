@@ -18,7 +18,7 @@ namespace MyRepoWebApp.IoC
         /// <summary>
         /// The scoped instance of the <see cref="ApplicationDbContext"/>
         /// </summary>
-        public static ApplicationDbContext ApplicationDbContext => IoCContainer.Provider.GetService<ApplicationDbContext>();
+        public static MyRepoWebAppContext ApplicationDbContext => IoCContainer.Provider.GetService<MyRepoWebAppContext>();
 
         /// <summary>
         /// The transient instance of the <see cref="IEmailSender"/>

@@ -12,6 +12,7 @@ using MyRepoWebApp.Services.Templates;
 using MyRepoWebApp.IoC;
 using Dna;
 using Dna.AspNet;
+using Microsoft.AspNetCore.Identity;
 
 namespace MyRepoWebApp
 {
@@ -40,7 +41,24 @@ namespace MyRepoWebApp
                 options.LoginPath = "/Account/Login";
                 options.ExpireTimeSpan = TimeSpan.FromHours(1);
                 options.AccessDeniedPath = "/Account/AccessDenied";
+                
+                
             });
+
+            // Change password policy
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Make really weak passwords possible
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 5;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+
+                // Make sure users have unique emails
+                options.User.RequireUniqueEmail = true;
+            });
+
 
             services.AddAuthorization(options =>
             {
@@ -64,6 +82,7 @@ namespace MyRepoWebApp
             // Use Dna Framework
             app.UseDnaFramework();
 
+           // FrameworkDI.Logger.LogCriticalSource("test");            
 
             if (env.IsDevelopment())
             {
@@ -103,12 +122,12 @@ namespace MyRepoWebApp
              });
           */
             
-            IoC.IoC.EmailTemplateSender.SendGeneralEmailAsync(new Models.SendEmailDetails
+           /* IoC.IoC.EmailTemplateSender.SendGeneralEmailAsync(new Models.SendEmailDetails
             {
                 content = "This is out first HTML email",
                 fromEmail = "82cp@outlook.com",
                 fromName = "charlie",
-                toEmail = "82cp@outlook.com",
+                toEmail = "cporter@tuta.io",
                 toName = "me",
                 isHTML = true,
                 subject = "This is sent from my web app"
@@ -118,7 +137,7 @@ namespace MyRepoWebApp
             "Thanks for creating an account with us. <br/>To continue, please verify your email with us.",
             "Verify Email",
             "https://myrepowebappravor.azurewebsites.net/)");
-
+*/
         
         }
     }

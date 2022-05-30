@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MyRepoWebApp.Models;
 using MyRepoWebApp.Services;
+using Microsoft.AspNetCore.Identity;
 
 namespace MyRepoWebApp.Pages.Account
 {
@@ -33,7 +34,7 @@ namespace MyRepoWebApp.Pages.Account
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid) return Page();
+           // if (!ModelState.IsValid) return Page();
 
             //if(Credential.Username == "admin" && Credential.Password == "password")
             if(CredentialModelUsernameExists(Credential.Email, Credential.Password))

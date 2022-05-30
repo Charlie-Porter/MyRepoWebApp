@@ -9,7 +9,7 @@ namespace MyRepoWebApp.Data
 {
     public class MyRepoWebAppContext : DbContext
     {
-        public MyRepoWebAppContext (DbContextOptions<MyRepoWebAppContext> options)
+        public MyRepoWebAppContext(DbContextOptions<MyRepoWebAppContext> options)
             : base(options)
         {
         }

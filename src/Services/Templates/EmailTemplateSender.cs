@@ -42,9 +42,8 @@ namespace MyRepoWebApp.Services.Templates
             templateText = templateText.Replace("--Title--", title)
                                         .Replace("--Content1--", content1)
                                         .Replace("--Content2--", content2)
-                                        .Replace("--ButtonText--", buttonText)
-                                        .Replace("--ButtonUrl--", content2)
-                                        .Replace("--Content1", content2);
+                                        .Replace("--Buttontext--", buttonText)
+                                        .Replace("--ButtonUrl--", buttonUrl);                                        
 
             //set the details content to this template content
             details.content = templateText;

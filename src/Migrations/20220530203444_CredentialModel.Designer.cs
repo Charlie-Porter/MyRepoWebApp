@@ -10,14 +10,14 @@ using MyRepoWebApp.Data;
 namespace MyRepoWebApp.Migrations
 {
     [DbContext(typeof(MyRepoWebAppContext))]
-    [Migration("20220524084645_UploadModel")]
-    partial class UploadModel
+    [Migration("20220530203444_CredentialModel")]
+    partial class CredentialModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.24")
+                .HasAnnotation("ProductVersion", "3.1.25")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -27,6 +27,9 @@ namespace MyRepoWebApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ActivationCode")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Admin")
                         .HasColumnType("bit");

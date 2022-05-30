@@ -28,7 +28,7 @@ namespace MyRepoWebApp.Services
             // using SendGrid's C# Library
             // https://github.com/sendgrid/sendgrid-csharp
 
-            var apiKey = "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";
+            var apiKey = "";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress(details.fromEmail, details.fromName);
             var subject = details.subject;
