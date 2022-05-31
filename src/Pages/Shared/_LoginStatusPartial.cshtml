@@ -2,10 +2,18 @@
 {
     <form method="post" class="form-inline" asp-page="/Account/Logout">
         Welcome @User.Identity.Name
-        <button type ="submit" class="btn btn-light">Logout</button>
+        <button type="submit" class="btn btn-light">Logout</button>
     </form>
 }
 else
-{ 
-    <button type="button" class="btn btn-outline-light" asp-page="/Account/Login">Login</button>
+{
+<div>
+    <a class="btn btn-secondary" asp-page="./RegisterUser">Register</a>
+    <form method="post" class="form-inline" asp-page="/Account/Login">
+        <button type="submit" class="btn btn-outline-light">Login</button>
+    </form>
+</div>
+   
+
+
 }

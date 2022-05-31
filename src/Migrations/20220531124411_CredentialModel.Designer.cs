@@ -10,7 +10,7 @@ using MyRepoWebApp.Data;
 namespace MyRepoWebApp.Migrations
 {
     [DbContext(typeof(MyRepoWebAppContext))]
-    [Migration("20220530203444_CredentialModel")]
+    [Migration("20220531124411_CredentialModel")]
     partial class CredentialModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,8 +28,8 @@ namespace MyRepoWebApp.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ActivationCode")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<Guid?>("ActivationCode")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("Admin")
                         .HasColumnType("bit");
@@ -43,6 +43,9 @@ namespace MyRepoWebApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("RememberMe")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Verified")
                         .HasColumnType("bit");
 
                     b.HasKey("UserId");

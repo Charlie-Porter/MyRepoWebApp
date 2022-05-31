@@ -31,7 +31,7 @@ namespace MyRepoWebApp.Services.SendGrid
                 subject = "Verify your Email - Charlies Repo"
             },
            "Verify Email",
-           $"Hi ,{displayName ?? "stranger"}", //if display is blank, use stranger
+           $"Hi {displayName ?? "there"}", //if display is blank, use stranger
            "Thanks for creating an account with us. <br/>To continue, please verify your email with us.",
            "Verify Email",
            verificiationUrl

@@ -15,7 +15,8 @@ namespace MyRepoWebApp.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Email = table.Column<string>(nullable: false),
                     Password = table.Column<string>(nullable: false),
-                    ActivationCode = table.Column<string>(nullable: true),
+                    ActivationCode = table.Column<Guid>(nullable: true),
+                    Verified = table.Column<bool>(nullable: false),
                     RememberMe = table.Column<bool>(nullable: false),
                     Admin = table.Column<bool>(nullable: false)
                 },
@@ -24,7 +25,7 @@ namespace MyRepoWebApp.Migrations
                     table.PrimaryKey("PK_CredentialModel", x => x.UserId);
                 });
 
-         
+        
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

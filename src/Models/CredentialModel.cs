@@ -21,9 +21,11 @@ namespace MyRepoWebApp.Models
             [DataType(DataType.Password)]
             public string Password { get; set; }
                       
-            public string? ActivationCode { get; set; }
-            
-            [Display(Name = "Remeber Me")]
+            public Guid? ActivationCode { get; set; }
+
+            public bool Verified { get; set; }
+
+        [Display(Name = "Remeber Me")]
             public bool RememberMe { get; set; }
 
             [Required]

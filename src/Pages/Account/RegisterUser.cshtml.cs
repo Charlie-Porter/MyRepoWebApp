@@ -61,26 +61,24 @@ namespace MyRepoWebApp.Pages.Account
             {
                 throw new ArgumentNullException(nameof(CredentialModel.Password));
             }
-
+            //hash password before saving it to the database
             CredentialModel.Password = Convert.ToBase64String(SecurityService.HashPasswordV2(CredentialModel.Password, _rng));
+            
+            // Generates an email verifcation code                
+            CredentialModel.ActivationCode = Guid.NewGuid();
 
+            //adds updated model to the context before saving
             _context.CredentialModel.Add(CredentialModel);
             await _context.SaveChangesAsync();
 
             try
             {
 
-                //   var emailVerificationCode = mUserManager.GenGenerateEmailConfirmationTokenAsyncTokenAsync(CredentialModel);
+                //   var emailVerificationCode = mUserManager.GenGenerateEmailConfirmationTokenAsyncTokenAsync(CredentialModel);              
 
-                // Generates an email verifcation code
-                Guid emailVerificationCode = Guid.NewGuid();
-                
-                var confirmationUrl = $@"http://{Request.Host.Value}/Account/Activate?code={emailVerificationCode}";
+                var confirmationUrl = $@"https://{Request.Host.Value}/Account/Activate?id={CredentialModel.UserId}&code={CredentialModel.ActivationCode}";
 
-                await MyRepoWebApp.Services.SendGrid.RepoEmailSender.SendUserVerificationEmailAsync(null, CredentialModel.Email, confirmationUrl);
-                            
-
-
+                await MyRepoWebApp.Services.SendGrid.RepoEmailSender.SendUserVerificationEmailAsync(null, CredentialModel.Email, confirmationUrl);                            
 
             }
             catch (Exception ex)
