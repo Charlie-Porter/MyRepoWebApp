@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 
-namespace MyRepoWebApp.Data
+namespace MyRepoWebApp.Models
 {
     /// <summary>
-    /// The user data and profile for our application
+    /// The user data and profile for _LoginPartial.cshtml
     /// </summary>
     public class ApplicationUser : IdentityUser
     {

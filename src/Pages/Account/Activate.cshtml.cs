@@ -10,12 +10,14 @@ using System.Data.SqlClient;
 using System.Data;
 using Dna;
 using System.Configuration;
+using MyRepoWebApp.Services.Logger;
+using MyRepoWebApp.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyRepoWebApp.Pages.Account
 {
     public class ActivateModel : PageModel
     {
-
         private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
 
         public ActivateModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
@@ -26,26 +28,38 @@ namespace MyRepoWebApp.Pages.Account
         public string Confirmation { get; set; }
         
         public void OnGet()
-        {            
+        {
+            WriteToLog.writeToLogInformation($@"*************Azure Informattion Logger enabled************************************");
+
             string userId = Request.Query["id"];
             string code = Request.Query["code"];
 
+            WriteToLog.writeToLogInformation($@"*************Activate page found {userId} and {code}");           
             if (userId != null && code != null)
             {
                 try
                 {
-                    using (IDbConnection connection = new System.Data.SqlClient.SqlConnection("Server=(localdb)\\mssqllocaldb;Database=MyRepoWebAppContext-87d5f408-9f32-465d-838a-210968c3083b;Trusted_Connection=True;MultipleActiveResultSets=true"))
+
+                    var connectionstring = _context.Database.GetDbConnection();
+
+                    using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(_context.Database.GetDbConnection().ConnectionString))
                     {
+                        WriteToLog.writeToLogInformation($@"*************{_context.Database.GetDbConnection().ConnectionString}");
 
                         var activateCount = connection.Query<int>($@"SELECT count(*) FROM CredentialModel WHERE UserId = '{userId}' AND ActivationCode = '{code}'").FirstOrDefault();
+
+                        WriteToLog.writeToLogInformation($@"*************Activate query --SELECT count(*) FROM CredentialModel WHERE UserId = '{userId}' AND ActivationCode = '{code}'--");
+                        WriteToLog.writeToLogInformation($@"*************Activate count for {userId} was {activateCount}");
                         if (activateCount > 0)
                         {
                             connection.Query($@"UPDATE CredentialModel SET Verified = 'true' WHERE UserId = '{userId}'").FirstOrDefault();
+                            WriteToLog.writeToLogInformation($@"*************Email activated successful for {userId}");
                             Confirmation = "Great news, your email was activated successful.";
                             return;
                         }
                         else
                         {
+                            WriteToLog.writeToLogInformation($@"*************Email failed activation for {userId}");
                             Confirmation = "Bad news, your email was not activated.";
                             return;
                         }
@@ -54,10 +68,11 @@ namespace MyRepoWebApp.Pages.Account
                 catch (Exception ex)
                 {                    
                     Confirmation = $@"An exception occurred, your email was not activated.";
-                    Dna.FrameworkDI.Logger.LogErrorSource($@"An exception occurred when activating email: {ex.Message}  {ex.InnerException}");
+                    WriteToLog.writeToLogError($@"*************An exception occurred when activating email: {ex.Message}  {ex.InnerException}");
                 }
                                 
             }
+            WriteToLog.writeToLogInformation($@"*************Gone into last return for some reason...  Bad news, your email was not activated");
             Confirmation =  "Bad news, your email was not activated.";
             return;
         }

@@ -9,10 +9,10 @@ using System;
 using MyRepoWebApp.Services;
 using MyRepoWebApp.Interfaces;
 using MyRepoWebApp.Services.Templates;
-using MyRepoWebApp.IoC;
-using Dna;
 using Dna.AspNet;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging.AzureAppServices;
+using Microsoft.Extensions.Logging;
 
 namespace MyRepoWebApp
 {
@@ -28,6 +28,7 @@ namespace MyRepoWebApp
 
         public void ConfigureServices(IServiceCollection services)
         {
+                       
 
             //Add SendGrid email sender
             services.AddSendGridEmailSender();
@@ -108,37 +109,7 @@ namespace MyRepoWebApp
                 endpoints.MapControllers();
                 endpoints.MapBlazorHub();
             });
-            /* app.ApplicationServices.GetService<IEmailSender>().SendEmailAsync(new Models.SendEmailDetails
-             {
-                 content = "This is out first HTML email",
-                 fromEmail = "82cplll@outlook.com",
-                 fromName = "charlie",
-                 toEmail = "82cpllll@outlook.com",
-                 toName = "me",
-                 isHTML = true,
-                 subject = "This is sent from my web app"
-
-
-             });
-          */
-            
-           /* IoC.IoC.EmailTemplateSender.SendGeneralEmailAsync(new Models.SendEmailDetails
-            {
-                content = "This is out first HTML email",
-                fromEmail = "82cp@outlook.com",
-                fromName = "charlie",
-                toEmail = "cporter@tuta.io",
-                toName = "me",
-                isHTML = true,
-                subject = "This is sent from my web app"
-            }, 
-            "Verify Email", 
-            "Hi Luke,",
-            "Thanks for creating an account with us. <br/>To continue, please verify your email with us.",
-            "Verify Email",
-            "https://myrepowebappravor.azurewebsites.net/)");
-*/
-        
+                        
         }
     }
 }

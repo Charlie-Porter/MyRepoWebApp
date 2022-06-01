@@ -1,5 +1,5 @@
 ﻿@page
-@model MyRepoWebApp.Pages.Account.LoginModel
+    @model MyRepoWebApp.Pages.Account.LoginModel
 @{
 }
 
@@ -32,6 +32,7 @@
                 </div>
 
             </div>
+            <p align="left" style="color:red">@Html.ValidationMessage("LoginValidationMessage")</p>
             <div class="form-group row">
                 <div class="col-2">
                     <input type="submit" class="btn btn-primary" value="login" />

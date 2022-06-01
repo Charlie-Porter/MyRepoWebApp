@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MyRepoWebApp.Models;
+using MyRepoWebApp.DI;
 
 namespace MyRepoWebApp.Services.SendGrid
 {
@@ -21,10 +22,10 @@ namespace MyRepoWebApp.Services.SendGrid
         public static async Task<SendEmailResponseModel> SendUserVerificationEmailAsync(string displayName, string email, string verificiationUrl)
         {
 
-            return await IoC.IoC.EmailTemplateSender.SendGeneralEmailAsync(new Models.SendEmailDetails
+            return await DIServices.EmailTemplateSender.SendGeneralEmailAsync(new Models.SendEmailDetails
             {            
                 fromEmail = "82cp@outlook.com",
-                fromName = "CharliesWebApp",
+                fromName = "CharliesRepo",
                 toEmail = email,
                 toName = displayName,
                 isHTML = true,

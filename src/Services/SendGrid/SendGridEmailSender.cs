@@ -9,6 +9,7 @@ using MyRepoWebApp.Models;
 using MyRepoWebApp.Interfaces;
 using System.Diagnostics;
 using Newtonsoft.Json;
+using MyRepoWebApp.Services.Logger;
 
 namespace MyRepoWebApp.Services
 {
@@ -28,12 +29,11 @@ namespace MyRepoWebApp.Services
             // using SendGrid's C# Library
             // https://github.com/sendgrid/sendgrid-csharp
 
-            var apiKey = "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";
+            var apiKey = "";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress(details.fromEmail, details.fromName);
             var subject = details.subject;
-            var to = new EmailAddress(details.toEmail, details.toName);
-            var plainTextContent = "and easy to do anywhere, even with C#";
+            var to = new EmailAddress(details.toEmail, details.toName);            
             var Content = details.content;
             var msg = MailHelper.CreateSingleEmail(
                 from,
@@ -43,12 +43,7 @@ namespace MyRepoWebApp.Services
                 details.isHTML ? null : details.content,
                 //html content
                 details.isHTML ? details.content : null);
-            /*
-                        msg.TemplateId = "9adfa7e1-f232-4fa6-b81f-e6d183d89617";
-                        msg.AddSubstitution("--Title--", "Verify Email");
-                        msg.AddSubstitution("--Content1--", "Hi there,");
-                        msg.AddSubstitution("--Content2--", "Please verify this email address to get access to the repo");*/
-
+            
             //finally send the email...
             var response = await client.SendEmailAsync(msg);
 
@@ -81,11 +76,8 @@ namespace MyRepoWebApp.Services
             }
             catch (Exception ex)
             {
-                //break if we are debugging
-                if (Debugger.IsAttached)
-                    Debugger.Break();
-                //if something went wrong, return message
-
+                //TODO: if something went wrong, return message
+                WriteToLog.writeToLogError(@$"Exception occurred sending Sendgrid email: {ex.Message} {ex.InnerException}");                
                 //return result baed on response
                 return new SendEmailResponseModel
                 {

@@ -8,17 +8,17 @@ using MyRepoWebApp.Data;
 using MyRepoWebApp.Interfaces;
 using Dna;
 
-namespace MyRepoWebApp.IoC
+namespace MyRepoWebApp.DI
 {
     /// <summary>
     /// A shorthand access class to get DI services with nice clean short code
     /// </summary>
-    public static class IoC
+    public static class DIServices
     {
         /// <summary>
         /// The scoped instance of the <see cref="ApplicationDbContext"/>
         /// </summary>
-        public static MyRepoWebAppContext ApplicationDbContext => IoCContainer.Provider.GetService<MyRepoWebAppContext>();
+        public static MyRepoWebAppContext ApplicationDbContext => DIContainer.Provider.GetService<MyRepoWebAppContext>();
 
         /// <summary>
         /// The transient instance of the <see cref="IEmailSender"/>
@@ -35,7 +35,7 @@ namespace MyRepoWebApp.IoC
     /// <summary>
     /// The dependency injection container making use of the built in .Net Core service provider
     /// </summary>
-    public static class IoCContainer
+    public static class DIContainer
     {
         /// <summary>
         /// The service provider for this application

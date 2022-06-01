@@ -13,6 +13,8 @@ using MyRepoWebApp.Models;
 using MyRepoWebApp.Services;
 //using Microsoft.AspNetCore.Identity;
 using System.Diagnostics;
+using Dna;
+using MyRepoWebApp.Services.Logger;
 
 namespace MyRepoWebApp.Pages.Account
 {
@@ -48,6 +50,7 @@ namespace MyRepoWebApp.Pages.Account
         {
             if (!ModelState.IsValid)
             {
+                WriteToLog.writeToLogInformation($@"Model state is not valid");
                 return Page();
             }
 
@@ -66,6 +69,7 @@ namespace MyRepoWebApp.Pages.Account
             
             // Generates an email verifcation code                
             CredentialModel.ActivationCode = Guid.NewGuid();
+            WriteToLog.writeToLogInformation($@"{CredentialModel.Email} activation code created and sent");
 
             //adds updated model to the context before saving
             _context.CredentialModel.Add(CredentialModel);

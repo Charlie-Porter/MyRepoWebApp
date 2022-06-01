@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using MyRepoWebApp.Interfaces;
 using MyRepoWebApp.Models;
 using System.Text;
-using MyRepoWebApp.IoC;
+using MyRepoWebApp.DI;
 using System.Diagnostics;
 
 namespace MyRepoWebApp.Services.Templates
@@ -49,7 +49,7 @@ namespace MyRepoWebApp.Services.Templates
             details.content = templateText;
 
             //send email
-            return await IoC.IoC.EmailSender.SendEmailAsync(details);
+            return await DIServices.EmailSender.SendEmailAsync(details);
         }
     }
 }
