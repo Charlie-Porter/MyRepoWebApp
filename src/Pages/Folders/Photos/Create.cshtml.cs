@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Primitives;
-using MyRepoWebApp.Models;
 
 namespace MyRepoWebApp.Pages.Photos
 {
@@ -48,7 +45,7 @@ namespace MyRepoWebApp.Pages.Photos
         {
             [Required]
             [Display(Name = "File")]
-            public IFormFile FormFile { get; set; }
+            public IFormFile? FormFile { get; set; }
         }
 
         public async Task<IActionResult> OnPostUploadAsync()
@@ -71,8 +68,8 @@ namespace MyRepoWebApp.Pages.Photos
                         };
 
                         file.Name = FileUpload.FormFile.FileName;
-                        file.UpdateDate = System.DateTime.Now;
-                        file.owner = User.Identity.Name;
+                        file.UpdateDate = DateTime.Now;
+                        file.owner = User.Identity.Name == null ? string.Empty : User.Identity.Name;                        
                         file.FolderId = folderId;
                         file.Type = FileUpload.FormFile.ContentType;
 

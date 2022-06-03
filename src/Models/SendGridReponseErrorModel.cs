@@ -13,16 +13,16 @@ namespace MyRepoWebApp.Models
         /// <summary>
         /// The error message
         /// </summary>
-        public string message { get; set; }
+        public string message { get; set; } = string.Empty;
         /// <summary>
         /// The field inside the email details that was in the error is related to
         /// </summary>        
-        public string field { get; set; }
+        public string field { get; set; } = string.Empty;
 
         /// <summary>
         /// Useful inform
         /// </summary>
-        public string help { get; set; }
+        public string help { get; set; } = string.Empty;
     }
 }
 

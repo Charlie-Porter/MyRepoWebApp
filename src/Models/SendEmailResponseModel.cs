@@ -17,6 +17,6 @@ namespace MyRepoWebApp.Models
         /// <summary>
         /// The error message if the sending failed
         /// </summary>
-        public List<string> Errors { get; set; }
+        public List<string> Errors { get; set; } = new List<string>();
     }
 }

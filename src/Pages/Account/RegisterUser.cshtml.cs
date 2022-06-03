@@ -1,24 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using MyRepoWebApp.Data;
 using MyRepoWebApp.Models;
 using MyRepoWebApp.Services;
-//using Microsoft.AspNetCore.Identity;
-using System.Diagnostics;
-using Dna;
 using MyRepoWebApp.Services.Logger;
 
 namespace MyRepoWebApp.Pages.Account
 {
-   
+
     public class RegisterUser : PageModel
     {
         /// <summary>
@@ -30,10 +22,7 @@ namespace MyRepoWebApp.Pages.Account
         RNGCryptoServiceProvider _rng = new RNGCryptoServiceProvider();
         private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
 
-        public RegisterUser(MyRepoWebApp.Data.MyRepoWebAppContext context)
-        {
-            _context = context;
-        }
+        public RegisterUser(Data.MyRepoWebAppContext context) => _context = context;
 
         public IActionResult OnGet()
         {            
@@ -76,25 +65,16 @@ namespace MyRepoWebApp.Pages.Account
             await _context.SaveChangesAsync();
 
             try
-            {
-
-                //   var emailVerificationCode = mUserManager.GenGenerateEmailConfirmationTokenAsyncTokenAsync(CredentialModel);              
+            {           
 
                 var confirmationUrl = $@"https://{Request.Host.Value}/Account/Activate?id={CredentialModel.UserId}&code={CredentialModel.ActivationCode}";
-
-                await MyRepoWebApp.Services.SendGrid.RepoEmailSender.SendUserVerificationEmailAsync(null, CredentialModel.Email, confirmationUrl);                            
+                var sendEmailResponseModel = await Services.SendGrid.RepoEmailSender.SendUserVerificationEmailAsync(displayName: string.Empty, CredentialModel.Email, confirmationUrl);                            
 
             }
             catch (Exception ex)
             {
-                //break if we are debugging
-                if (Debugger.IsAttached)
-                    Debugger.Break();
-                //if something went wrong, return message
+                WriteToLog.writeToLogError($@"exception on register user: {ex.Message} {ex.InnerException}");
             }
-
-
-
             return RedirectToPage("./Users");
         }
 

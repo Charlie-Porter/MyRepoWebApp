@@ -12,18 +12,18 @@ namespace MyRepoWebApp.Models
             [Required]
             [Key]
             public long UserId { get; set; }
-            
-            [Required]
-            [EmailAddress]        
-            public string Email { get; set; }
-            
+
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
+
             [Required]
             [DataType(DataType.Password)]
-            public string Password { get; set; }
-                      
-            public Guid? ActivationCode { get; set; }
+            public string Password { get; set; } = string.Empty;
 
-            public bool Verified { get; set; }
+        public Guid? ActivationCode { get; set; } 
+
+        public bool Verified { get; set; }
 
         [Display(Name = "Remeber Me")]
             public bool RememberMe { get; set; }

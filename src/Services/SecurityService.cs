@@ -10,9 +10,7 @@ namespace MyRepoWebApp.Services
 {
     public class SecurityService
     {
-        private readonly PasswordHasherCompatibilityMode _compatibilityMode;
-        private readonly int _iterCount;
-        private readonly RandomNumberGenerator _rng;
+        private readonly PasswordHasherCompatibilityMode _compatibilityMode;        
 
         public static byte[] HashPasswordV2(string password, RandomNumberGenerator rng)
         {

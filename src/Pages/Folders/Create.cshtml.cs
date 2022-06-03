@@ -14,9 +14,9 @@ namespace MyRepoWebApp.Pages.Folders
     [Authorize]
     public class CreateModel : PageModel
     {
-        private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
+        private readonly MyRepoWebAppContext _context;
 
-        public CreateModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
+        public CreateModel(MyRepoWebAppContext context)
         {
             _context = context;
         }
@@ -40,7 +40,9 @@ namespace MyRepoWebApp.Pages.Folders
                  return Page();
              }*/
 
-            FolderModel.owner = User.Identity.Name;
+            //if user identity is empty 
+            FolderModel.owner = User.Identity.Name == null ? string.Empty : User.Identity.Name;            
+            
             FolderModel.UpdateDate = DateTime.Now;
 
 

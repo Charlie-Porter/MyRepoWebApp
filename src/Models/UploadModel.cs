@@ -26,6 +26,6 @@ namespace MyRepoWebApp.Models
         public int FolderId { get; set; } 
 
         [Required]
-        public byte[]? contents { get; set; }
+        public byte[] contents { get; set; } = new byte[0];
     }
 }

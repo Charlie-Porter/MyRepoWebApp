@@ -62,7 +62,7 @@ namespace MyRepoWebApp.Services
                 //Add any errors to the response
                 var errorResponse = new SendEmailResponseModel
                 {
-                    Errors = sendGridResponse?.Errors.Select(f => f.message).ToList()
+                    Errors = sendGridResponse.Errors.Select(f => f.message).ToList()
                 };
 
                 // Make sure we have at least one error

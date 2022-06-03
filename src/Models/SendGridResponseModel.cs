@@ -8,7 +8,7 @@ namespace MyRepoWebApp.Models
     public class SendGridResponseModel
     {
         //any errors from response
-        public List<SendGridReponseErrorModel> Errors { get; set; }
+        public List<SendGridReponseErrorModel> Errors { get; set; } = new List<SendGridReponseErrorModel>();
 
     }
         

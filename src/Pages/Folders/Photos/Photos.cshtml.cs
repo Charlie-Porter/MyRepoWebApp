@@ -14,9 +14,9 @@ namespace MyRepoWebApp.Pages.Photos
     [Authorize]
     public class PhotosModel : PageModel
     {
-        private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
+        private readonly MyRepoWebAppContext _context;
 
-        public PhotosModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
+        public PhotosModel(MyRepoWebAppContext context)
         {
             _context = context;
         }

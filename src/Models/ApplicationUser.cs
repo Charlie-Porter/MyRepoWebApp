@@ -16,12 +16,12 @@ namespace MyRepoWebApp.Models
         /// <summary>
         /// The users first name
         /// </summary>
-        public string FirstName { get; set; }
+        public string FirstName { get; set; } = string.Empty;
 
         /// <summary>
         /// The users last name
         /// </summary>
-        public string LastName { get; set; }
+        public string LastName { get; set; } = string.Empty;
 
         #endregion
     }

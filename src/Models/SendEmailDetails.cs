@@ -7,13 +7,13 @@ namespace MyRepoWebApp.Models
 {
     public class SendEmailDetails
     {
-        public string fromName{ get; set; }
-        public string fromEmail{ get; set; }
-        public string toName{ get; set; }
-        public string toEmail{ get; set; }
-        public string subject { get; set; }
-        public string content{ get; set; }
-        public bool isHTML{ get; set; }
+        public string fromName { get; set; } = string.Empty;
+        public string fromEmail{ get; set; } = string.Empty;
+        public string toName{ get; set; } = string.Empty;
+        public string toEmail{ get; set; } = string.Empty;
+        public string subject { get; set; } = string.Empty;
+        public string content{ get; set; } = string.Empty;
+        public bool isHTML{ get; set; } 
 
 
     }
