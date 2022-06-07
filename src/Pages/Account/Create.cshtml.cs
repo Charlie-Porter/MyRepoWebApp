@@ -31,7 +31,7 @@ namespace MyRepoWebApp.Pages.Account
         }
 
         [BindProperty]
-        public CredentialModel CredentialModel { get; set; }
+        public CredentialModel CredentialModel { get; set; } = new CredentialModel();
 
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://aka.ms/RazorPagesCRUD.

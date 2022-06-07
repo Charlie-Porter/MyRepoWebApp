@@ -59,25 +59,34 @@ namespace MyRepoWebApp.Services
 
                 var sendGridResponse = JsonConvert.DeserializeObject<SendGridResponseModel>(bodyResult);
 
-                //Add any errors to the response
-                var errorResponse = new SendEmailResponseModel
+                if (sendGridResponse != null)
                 {
-                    Errors = sendGridResponse.Errors.Select(f => f.message).ToList()
-                };
+                    //Add any errors to the response
+                    var errorResponse = new SendEmailResponseModel
+                    {
 
-                // Make sure we have at least one error
-                if (errorResponse.Errors == null || errorResponse.Errors.Count == 0)
-                    //add an unknown error#
-                    //TODO:
-                    errorResponse.Errors = new List<string>(new[] { "Unknown error from email sending service. Please contact support :) " });
-                
-                //returns the error response
-                return errorResponse;
+                        Errors = sendGridResponse.Errors.Select(f => f.message).ToList()
+
+                    };
+
+                    // Make sure we have at least one error
+                    if (errorResponse.Errors == null || errorResponse.Errors.Count == 0)
+                        //add an unknown error#
+                        //TODO:
+                        errorResponse.Errors = new List<string>(new[] { "Unknown error from email sending service. Please contact support :) " });
+
+                    //returns the error response
+                    return errorResponse;
+                }
+                else
+                {
+                    return new SendEmailResponseModel { Errors = new List<string>() };
+                }
             }
             catch (Exception ex)
             {
                 //TODO: if something went wrong, return message
-                WriteToLog.writeToLogError(@$"Exception occurred sending Sendgrid email: {ex.Message} {ex.InnerException}");                
+                WriteToLog.writeToLogError(@$"Exception occurred sending Sendgrid email: {ex.Message} {ex.InnerException}");
                 //return result baed on response
                 return new SendEmailResponseModel
                 {

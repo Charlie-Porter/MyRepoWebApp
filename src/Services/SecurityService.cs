@@ -9,9 +9,7 @@ using Microsoft.AspNetCore.Identity;
 namespace MyRepoWebApp.Services
 {
     public class SecurityService
-    {
-        private readonly PasswordHasherCompatibilityMode _compatibilityMode;        
-
+    {        
         public static byte[] HashPasswordV2(string password, RandomNumberGenerator rng)
         {
             const KeyDerivationPrf Pbkdf2Prf = KeyDerivationPrf.HMACSHA1; // default for Rfc2898DeriveBytes
@@ -31,7 +29,7 @@ namespace MyRepoWebApp.Services
             return outputBytes;
         }
         public virtual PasswordVerificationResult VerifyHashedPassword(string hashedPassword, string providedPassword)
-        {
+        {                   
             if (hashedPassword == null)
             {
                 throw new ArgumentNullException(nameof(hashedPassword));
@@ -48,6 +46,9 @@ namespace MyRepoWebApp.Services
             {
                 return PasswordVerificationResult.Failed;
             }
+            
+            PasswordHasherCompatibilityMode _compatibilityMode = new PasswordHasherCompatibilityMode();
+
             if (VerifyHashedPasswordV2(decodedHashedPassword, providedPassword))
             {
                 // This is an old password hash format - the caller needs to rehash if we're not running in an older compat mode.

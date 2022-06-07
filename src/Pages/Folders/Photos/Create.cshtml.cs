@@ -14,7 +14,7 @@ namespace MyRepoWebApp.Pages.Photos
     public class UploadModel : PageModel 
     {
         [BindProperty]
-        public BufferedSingleFileUploadDb FileUpload { get; set; }
+        public BufferedSingleFileUploadDb FileUpload { get; set; } = new BufferedSingleFileUploadDb();
         private readonly Data.MyRepoWebAppContext _context;
         
         [BindProperty, TempData]
@@ -50,12 +50,15 @@ namespace MyRepoWebApp.Pages.Photos
 
         public async Task<IActionResult> OnPostUploadAsync()
         {
+            
+            
             if (folderId > 0)
             {
 
 
                 using (var memoryStream = new MemoryStream())
                 {
+                    
                     await FileUpload.FormFile.CopyToAsync(memoryStream);
 
                     // Upload the file if less than 2 MB

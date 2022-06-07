@@ -19,13 +19,14 @@ namespace MyRepoWebApp.Pages.Account
     public class LoginModel : PageModel
     {
         [BindProperty]
-        public CredentialModel Credential { get; set; }
+        public CredentialModel Credential { get; set; } = new CredentialModel();
 
-        public string statusMessage { get; set; }
+        public string statusMessage { get; set; } = String.Empty;
 
         private readonly MyRepoWebApp.Data.MyRepoWebAppContext _context;
-        private CredentialModel doesUserExistinDB;
-        public LoginModel(MyRepoWebApp.Data.MyRepoWebAppContext context)
+        
+        private CredentialModel doesUserExistinDB = new CredentialModel();
+        public LoginModel(Data.MyRepoWebAppContext context)
         {
             _context = context;
         }

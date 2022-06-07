@@ -9,7 +9,7 @@ namespace MyRepoWebApp
 {
     public class Program
     {
-        public static ILogger Logger;
+        public static ILogger? Logger;
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();

@@ -11,6 +11,17 @@
             <input type="submit" value="Filter" />
         </p>
     </form>
+    
+    <form enctype="multipart/form-data" method="post">
+            <dl>                
+                <p align="left" style="color:red">@Html.ValidationMessage("FolderDoesNotExist")</p>
+                <dd>
+                    <input asp-for="FileUpload.FormFile" type="file" accept="image/jpeg,  image/jpg">
+                </dd>
+            </dl>
+            <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload" CausesValidation="true" asp-validation-for="@Model.folderId">
+        </form>
+
 
     <p>
         <a class="btn btn-secondary" asp-page="../Folders">Upload</a>
