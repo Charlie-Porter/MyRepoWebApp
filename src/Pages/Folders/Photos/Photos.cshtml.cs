@@ -36,8 +36,7 @@ namespace MyRepoWebApp.Pages.Photos
             if (context != null) _context = context;
                         
         }
-
-        [TempData]
+       
         public int folderId { get; set; }
 
         public IList<Models.UploadModel> Upload { get;set; } = new List<Models.UploadModel>();
@@ -54,15 +53,14 @@ namespace MyRepoWebApp.Pages.Photos
                 if (Request.QueryString.ToString().Contains("id"))
                 {
                     folderId = Id;
+                    Response.Cookies.Append("FolderId", Id.ToString());
                 }                
                 else
                 {
-                    folderId = Convert.ToInt32(TempData["folderId"].ToString());
-                    TempData.Keep();
+                    folderId = Convert.ToInt32(Request.Cookies["FolderId"]);                                        
                 }
 
-
-                if (Request.QueryString.ToString().Contains("id") )
+                if (folderId > 0)
                 {
 
                     folderId = Id;
@@ -70,88 +68,78 @@ namespace MyRepoWebApp.Pages.Photos
                     var Uploads = from m in _context.Upload
                                   where m.owner == User.Identity.Name
                                   where m.FolderId == folderId
-                                  select m;
-                    if (!string.IsNullOrEmpty(SearchString))
-                    {
-                        Uploads = Uploads.Where(s => s.Name.Contains(SearchString));
-                    }
+                                  select m;                 
 
                     Upload = await Uploads.ToListAsync();
                 }
                 else
                 {
-                    RedirectToPage("/Folders/Photos/Photos");
+                    RedirectToPage($@"/Folders/Photos/Photos", new { id = folderId });
                 }
             }
             else
             {
-                RedirectToPage("/photos");
+                RedirectToPage($@"/Folders/Photos/Photos", new { id = folderId });
             }
         }
 
         public async Task<IActionResult> OnPostUploadAsync()
         {
-            //get folder id from query string or tempdata from last request
+            //If the upload button is pressed without refreshing the pagem, get folder id from cookie
 
-           folderId = Convert.ToInt32(TempData["folderId"].ToString());
-           TempData.Keep();
+            if (folderId == 0) 
+            { 
+                folderId = Convert.ToInt32(Request.Cookies["FolderId"]); 
+            }
+             
+            // if folder id is still 0 (cookie didnt have the value, return validation message
+            if (folderId == 0)
+            {
+                ModelState.AddModelError("ValidationMessage", "The folder is invalid, please refresh this page to try again!");
+                return Page();
+            }
 
             if (FileUpload.FormFile != null)
             {
-                if (folderId > 0)
+                using (var memoryStream = new MemoryStream())
                 {
-                    using (var memoryStream = new MemoryStream())
+
+                    await FileUpload.FormFile.CopyToAsync(memoryStream);
+
+                    // Upload the file if less than 20 MB
+                    if (memoryStream.Length < 20971520)
                     {
-
-                        await FileUpload.FormFile.CopyToAsync(memoryStream);
-
-                        // Upload the file if less than 2 MB
-                        if (memoryStream.Length < 2097152)
+                        var file = new Models.UploadModel()
                         {
-                            var file = new Models.UploadModel()
-                            {
-                                contents = memoryStream.ToArray()
+                            contents = memoryStream.ToArray()
 
-                            };
+                        };
 
-                            file.Name = FileUpload.FormFile.FileName;
-                            file.UpdateDate = DateTime.Now;
-                            file.owner = User.Identity.Name == null ? string.Empty : User.Identity.Name;
-                            file.FolderId = folderId;
-                            file.Type = FileUpload.FormFile.ContentType;
+                        file.Name = FileUpload.FormFile.FileName;
+                        file.UpdateDate = DateTime.Now;
+                        file.owner = User.Identity.Name == null ? string.Empty : User.Identity.Name;
+                        file.FolderId = folderId;
+                        file.Type = FileUpload.FormFile.ContentType;
 
 
 
-                            _context.Upload.Add(file);
+                        _context.Upload.Add(file);
 
-                            await _context.SaveChangesAsync();
-
-
-                        }
-                        else
-                        {
-                            return RedirectToPage($@"/Folders/Photos/Photos?id={folderId}");  //https://localhost:61328/Folders/Photos/Photos?id=1
-
-                        }
+                        await _context.SaveChangesAsync();
                     }
+                    else
+                    {
+                        return RedirectToPage($@"/Folders/Photos/Photos", new { id = folderId });
 
-                    return RedirectToPage($@"/Folders/Photos/Photos?id={folderId}");
-                }
-                else
-                {
-                    ModelState.AddModelError("FolderDoesNotExist", "The folder is invalid, please navigate to the folder page and try again!");
-                    return Page();
-                }
-            }
+                    }
+                }            
+                return RedirectToPage($@"/Folders/Photos/Photos", new { id = folderId });            
+            }            
             else 
             { 
-                ModelState.AddModelError("ChooseAFile", "This choose a file to upload..");
-                return Page();
-
+                ModelState.AddModelError("ValidationMessage", "This choose a file to upload..");
+                return RedirectToPage($@"/Folders/Photos/Photos", new { id = folderId });
             }
         }
-
-            
-
     }
 }

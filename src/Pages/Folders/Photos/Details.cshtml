@@ -26,6 +26,5 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-outline-light" asp-page="./Folders/Photos/Edit" asp-route-id="@Model.Upload.ID">Edit</a> 
-    <a class="btn btn-outline-success" asp-page="/Folders/Folders">Back to List</a>
+    <a class="btn btn-outline-success" asp-page="./Photos" asp-route-id="@Convert.ToInt32(Request.Cookies["FolderId"])">Back to List</a> 
 </div>

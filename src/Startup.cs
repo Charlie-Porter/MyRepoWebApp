@@ -7,12 +7,10 @@ using Microsoft.EntityFrameworkCore;
 using MyRepoWebApp.Data;
 using System;
 using MyRepoWebApp.Services;
-using MyRepoWebApp.Interfaces;
 using MyRepoWebApp.Services.Templates;
 using Dna.AspNet;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Logging.AzureAppServices;
-using Microsoft.Extensions.Logging;
+
 
 namespace MyRepoWebApp
 {
@@ -41,9 +39,7 @@ namespace MyRepoWebApp
                 options.Cookie.Name = "MyCookieAuth";
                 options.LoginPath = "/Account/Login";
                 options.ExpireTimeSpan = TimeSpan.FromHours(1);
-                options.AccessDeniedPath = "/Account/AccessDenied";
-                
-                
+                options.AccessDeniedPath = "/Account/AccessDenied";                                
             });
 
             // Change password policy

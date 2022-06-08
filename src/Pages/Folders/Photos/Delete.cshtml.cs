@@ -55,7 +55,7 @@ namespace MyRepoWebApp.Pages.Photos
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("/Folders/Folders");
+            return RedirectToPage("./Photos", new { id = Convert.ToInt32(Request.Cookies["FolderId"]) });
         }
     }
 }

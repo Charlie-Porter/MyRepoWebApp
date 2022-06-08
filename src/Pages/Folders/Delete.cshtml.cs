@@ -40,7 +40,7 @@ namespace MyRepoWebApp.Pages.Folders
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(long? id)
         {
             if (id == null)
             {
@@ -55,7 +55,7 @@ namespace MyRepoWebApp.Pages.Folders
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Folders");
         }
     }
 }

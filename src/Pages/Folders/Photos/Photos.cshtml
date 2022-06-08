@@ -5,33 +5,21 @@
     ViewData["Title"] = "Photos";
 }
 
-    <form>
-        <p>
-            Title: <input type="text" asp-for="SearchString" />
-            <input type="submit" value="Filter" />
-        </p>
-    </form>
+<br />
     
-    <form enctype="multipart/form-data" method="post">
-            <dl>                
-                <p align="left" style="color:red">@Html.ValidationMessage("FolderDoesNotExist")</p>
-                <dd>
-                    <input asp-for="FileUpload.FormFile" type="file" accept="image/jpeg,  image/jpg">
-                </dd>
-            </dl>
-            <input asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload" CausesValidation="true" asp-validation-for="@Model.folderId">
-        </form>
+<form enctype="multipart/form-data" method="post" align="right">     
+    <input  align="right" asp-for="FileUpload.FormFile" type="file" accept="image/jpeg,  image/jpg">         
+    <input  align="right" asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload" CausesValidation="true" asp-validation-for="@Model.folderId">
+</form>
 
+<p align="right" style="color:red">@Html.ValidationMessage("ValidationMessage")</p>
 
-    <p>
-        <a class="btn btn-secondary" asp-page="../Folders">Upload</a>
-    </p>
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Upload[0].ID)
-            </th>
+            </th>   
             <th>
                 @Html.DisplayNameFor(model => model.Upload[0].Name)
             </th>
@@ -72,8 +60,7 @@
                 <img src="data:image;base64,@System.Convert.ToBase64String(item.contents)" width="80" height="80" />
             </td>
             <td>
-                <a class="btn btn-outline-light" download="@item.Name" href="data:@item.Type;base64,@System.Convert.ToBase64String(item.contents)">Download</a> 
-                <a class="btn btn-outline-light" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> 
+                <a class="btn btn-outline-light" download="@item.Name" href="data:@item.Type;base64,@System.Convert.ToBase64String(item.contents)">Download</a>                 
                 <a class="btn btn-outline-light" asp-page="./Details" asp-route-id="@item.ID">Details</a> 
                 <a class="btn btn-outline-light" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
