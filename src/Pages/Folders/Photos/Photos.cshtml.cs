@@ -53,6 +53,7 @@ namespace MyRepoWebApp.Pages.Photos
                 if (Request.QueryString.ToString().Contains("id"))
                 {
                     folderId = Id;
+                    //TODO: set expiry of cookie
                     Response.Cookies.Append("FolderId", Id.ToString());
                 }                
                 else
