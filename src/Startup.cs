@@ -10,7 +10,8 @@ using MyRepoWebApp.Services;
 using MyRepoWebApp.Services.Templates;
 using Dna.AspNet;
 using Microsoft.AspNetCore.Identity;
-
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.CookiePolicy;
 
 namespace MyRepoWebApp
 {
@@ -40,6 +41,15 @@ namespace MyRepoWebApp
                 options.LoginPath = "/Account/Login";
                 options.ExpireTimeSpan = TimeSpan.FromHours(1);
                 options.AccessDeniedPath = "/Account/AccessDenied";                                
+            });
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                options.CheckConsentNeeded = context => false;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+                options.HttpOnly = HttpOnlyPolicy.Always;
+                options.Secure = CookieSecurePolicy.Always;
+                
             });
 
             // Change password policy
@@ -94,7 +104,7 @@ namespace MyRepoWebApp
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseCookiePolicy();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
