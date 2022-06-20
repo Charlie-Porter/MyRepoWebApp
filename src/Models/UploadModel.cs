@@ -11,10 +11,10 @@ namespace MyRepoWebApp.Models
     {        
         [Required]
         [Key]
-        public long ID { get; set; }
+        public long Id { get; set; }
         [Required]        
         public string Name { get; set; } = string.Empty;      
-        public string owner { get; set; } = string.Empty;
+        public string Owner { get; set; } = string.Empty;
 
         [Required]
         [Display(Name = "Updated Date")]
@@ -26,6 +26,9 @@ namespace MyRepoWebApp.Models
         public int FolderId { get; set; } 
 
         [Required]
-        public byte[] contents { get; set; } = new byte[0];
+        public byte[] Contents { get; set; } = new byte[0];
+        
+        public byte[] Thumbnail { get; set; } = new byte[0];
+
     }
 }

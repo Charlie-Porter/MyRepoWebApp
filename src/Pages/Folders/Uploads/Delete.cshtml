@@ -1,5 +1,5 @@
 ﻿@page
-@model MyRepoWebApp.Pages.Photos.DeleteModel
+@model MyRepoWebApp.Pages.Uploads.DeleteModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -10,7 +10,7 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Upload.ID)
+            @Html.DisplayNameFor(model => model.Upload.Id)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Upload.Name)
@@ -24,8 +24,8 @@
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="Upload.ID" />
+        <input type="hidden" asp-for="Upload.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> 
-        <a class="btn btn-outline-success" asp-page="./Photos" asp-route-id="@Convert.ToInt32(Request.Cookies["FolderId"])">Back to List</a> 
+        <a class="btn btn-outline-success" asp-page="./Uploads" asp-route-id="@Convert.ToInt32(Request.Cookies["FolderId"])">Back to List</a> 
     </form>
 </div>

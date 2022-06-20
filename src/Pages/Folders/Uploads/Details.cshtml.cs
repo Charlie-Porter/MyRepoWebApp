@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using MyRepoWebApp.Data;
 using MyRepoWebApp.Models;
 
-namespace MyRepoWebApp.Pages.Photos
+namespace MyRepoWebApp.Pages.Uploads
 {
     [Authorize]
     public class DetailsModel : PageModel
@@ -30,7 +30,7 @@ namespace MyRepoWebApp.Pages.Photos
                 return NotFound();
             }
 
-            Upload = await _context.Upload.FirstOrDefaultAsync(m => m.ID == id);
+            Upload = await _context.Upload.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Upload == null)
             {

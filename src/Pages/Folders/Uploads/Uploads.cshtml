@@ -1,0 +1,85 @@
+﻿@page
+@model MyRepoWebApp.Pages.Uploads.UploadsModel
+
+@{
+    ViewData["Title"] = "Uploads";
+}
+
+<br />
+    
+<form enctype="multipart/form-data" method="post" align="right">     
+    <input  align="right" asp-for="FileUpload.FormFile" type="file">         
+    <input  align="right" asp-page-handler="Upload" class="btn btn-primary" type="submit" value="Upload" CausesValidation="true" asp-validation-for="@Model.folderId">
+</form>
+
+<p align="right" style="color:red">@Html.ValidationMessage("ValidationMessage")</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Upload[0].Id)
+            </th>   
+            <th>
+                @Html.DisplayNameFor(model => model.Upload[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Upload[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Upload[0].FolderId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Upload[0].UpdateDate)
+            </th>
+            <th>
+                Preview
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Upload) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FolderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateDate)
+            </td>
+            <td>
+                    @if(item.Type == "image/jpeg")
+                    {
+                        <img src="data:image;base64,@System.Convert.ToBase64String(item.Thumbnail)" width="80" height="80" />
+                    }
+                    else if (item.Type == "text/plain")
+                    {
+                        <img src=https://cdn.jsdelivr.net/npm/bootstrap-icons/icons/file-earmark-text.svg width="80" height="80" />
+                    }
+                    else
+                    {
+                        <i class="bi bi-file"></i>
+                    }
+                    
+
+
+                
+            </td>
+            <td>
+                <a class="btn btn-outline-light" href="@Url.Page("Uploads", "DownloadFile", new { Id = item.Id})">Download</a>
+                <a class="btn btn-outline-light" asp-page="./Details" asp-route-id="@item.Id">Details</a> 
+                <a class="btn btn-outline-light" asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
