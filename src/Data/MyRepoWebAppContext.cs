@@ -9,12 +9,16 @@ namespace MyRepoWebApp.Data
 {
     public class MyRepoWebAppContext : DbContext
     {
+
+        //constructor
         public MyRepoWebAppContext(DbContextOptions<MyRepoWebAppContext> options)
             : base(options)
         {
         }
 
         public DbSet<UploadModel> Upload { get; set; }
+
+        public DbSet<ContentsModel> Content { get; set; }
 
         public DbSet<CredentialModel> CredentialModel { get; set; }
 

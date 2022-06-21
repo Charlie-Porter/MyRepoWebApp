@@ -1,4 +1,5 @@
-﻿using Dna.AspNet;
+﻿using Dna;
+using Dna.AspNet;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -46,7 +47,12 @@ namespace MyRepoWebApp
              )
              .ConfigureWebHostDefaults(webBuilder =>
              {
-                 webBuilder.UseDnaFramework();
+                 //add dns framework
+                 webBuilder.UseDnaFramework(construct =>
+                 {
+                     //add file logger
+                     construct.AddFileLogger();
+                 });
                  webBuilder.UseStartup<Startup>();
              });
     }

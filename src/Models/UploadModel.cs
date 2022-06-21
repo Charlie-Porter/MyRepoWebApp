@@ -8,12 +8,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MyRepoWebApp.Models
 {
     public class UploadModel
-    {        
+    {
         [Required]
         [Key]
         public long Id { get; set; }
-        [Required]        
-        public string Name { get; set; } = string.Empty;      
+        [Required]
+        public string Name { get; set; } = string.Empty;
         public string Owner { get; set; } = string.Empty;
 
         [Required]
@@ -21,14 +21,14 @@ namespace MyRepoWebApp.Models
         [DataType(DataType.Date)]
         public DateTime UpdateDate { get; set; }
         public string Type { get; set; } = string.Empty;
-        
-        [Required]
-        public int FolderId { get; set; } 
 
         [Required]
-        public byte[] Contents { get; set; } = new byte[0];
-        
-        public byte[] Thumbnail { get; set; } = new byte[0];
+        public int FolderId { get; set; }
+
+        [Required]
+        public long ContentId { get; set; }
+
+        public byte[] Thumbnail { get; set; } = new byte[0]; 
 
     }
 }

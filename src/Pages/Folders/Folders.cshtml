@@ -6,7 +6,7 @@
 }
 
 
-<h1>Upload Folders</h1>
+<h1>Folders</h1>
 
 <p>
     <a class="btn btn-secondary" asp-page="Create">Create New Folder</a>
@@ -33,10 +33,7 @@
 @foreach (var item in Model.FolderModel) {
         <tr>
             <td>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-plus" viewBox="0 0 16 16">
-                    <path d="m.5 3 .04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14H9v-1H2.826a1 1 0 0 1-.995-.91l-.637-7A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09L14.54 8h1.005l.256-2.819A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm5.672-1a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z" />
-                    <path d="M13.5 10a.5.5 0 0 1 .5.5V12h1.5a.5.5 0 1 1 0 1H14v1.5a.5.5 0 1 1-1 0V13h-1.5a.5.5 0 0 1 0-1H13v-1.5a.5.5 0 0 1 .5-.5z" />
-                </svg>
+               <img src="data:image/png;base64,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" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)

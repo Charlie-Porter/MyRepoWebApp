@@ -1,0 +1,1364 @@
+INFORMATION: [2022-06-21 08:48:57] User profile is available. Using 'C:\Users\gaming\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFORMATION: [2022-06-21 08:48:58] Now listening on: https://localhost:61328
+INFORMATION: [2022-06-21 08:48:58] Now listening on: http://localhost:61329
+INFORMATION: [2022-06-21 08:48:58] Application started. Press Ctrl+C to shut down.
+INFORMATION: [2022-06-21 08:48:58] Hosting environment: Development
+INFORMATION: [2022-06-21 08:48:58] Content root path: C:\Users\gaming\Source\Repos\MyRepoWebApp\src
+INFORMATION: [2022-06-21 08:48:59] Request starting HTTP/2 GET https://localhost:61328/  
+INFORMATION: [2022-06-21 08:48:59] Authorization failed.
+INFORMATION: [2022-06-21 08:48:59] AuthenticationScheme: MyCookieAuth was challenged.
+INFORMATION: [2022-06-21 08:48:59] Request finished in 90.5087ms 302 
+INFORMATION: [2022-06-21 08:48:59] Request starting HTTP/2 GET https://localhost:61328/Account/Login?ReturnUrl=%2F  
+INFORMATION: [2022-06-21 08:48:59] Executing endpoint '/Account/Login'
+INFORMATION: [2022-06-21 08:48:59] Route matched with {page = "/Account/Login"}. Executing page /Account/Login
+INFORMATION: [2022-06-21 08:48:59] Executing handler method MyRepoWebApp.Pages.Account.LoginModel.OnGet - ModelState is Valid
+INFORMATION: [2022-06-21 08:48:59] Executed handler method OnGet, returned result .
+INFORMATION: [2022-06-21 08:48:59] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:48:59] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:49:00] Executed page /Account/Login in 344.0896ms
+INFORMATION: [2022-06-21 08:49:00] Executed endpoint '/Account/Login'
+INFORMATION: [2022-06-21 08:49:00] Request finished in 403.294ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:49:00] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:49:00] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:49:00] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:49:00] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:49:00] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:49:00] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:49:00] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:49:00] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:49:00] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:49:00] Request finished in 29.7455ms 200 application/javascript
+INFORMATION: [2022-06-21 08:49:00] Request finished in 39.1273ms 200 text/css
+INFORMATION: [2022-06-21 08:49:00] Request finished in 25.1314ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:49:00] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:49:00] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:49:00] Request finished in 50.0738ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:49:00] Request finished in 58.1329ms 200 application/javascript
+INFORMATION: [2022-06-21 08:49:00] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:49:00] Request finished in 64.2636ms 200 application/javascript
+INFORMATION: [2022-06-21 08:49:00] Request finished in 79.5119ms 200 text/css
+INFORMATION: [2022-06-21 08:49:04] Request starting HTTP/2 POST https://localhost:61328/Account/Login?ReturnUrl=%2F application/x-www-form-urlencoded 274
+INFORMATION: [2022-06-21 08:49:04] Executing endpoint '/Account/Login'
+INFORMATION: [2022-06-21 08:49:04] Route matched with {page = "/Account/Login"}. Executing page /Account/Login
+INFORMATION: [2022-06-21 08:49:04] Executing handler method MyRepoWebApp.Pages.Account.LoginModel.OnPostAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:49:04] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:49:05] Executed DbCommand (30ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[UserId], [c].[ActivationCode], [c].[Admin], [c].[Email], [c].[Password], [c].[RememberMe], [c].[Verified]
+FROM [CredentialModel] AS [c]
+WHERE [c].[Email] = @__Email_0
+INFORMATION: [2022-06-21 08:49:05] cporter@tuta.io exists in database.
+INFORMATION: [2022-06-21 08:49:05] Executed DbCommand (1ms) [Parameters=[@__Email_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[UserId], [c].[ActivationCode], [c].[Admin], [c].[Email], [c].[Password], [c].[RememberMe], [c].[Verified]
+FROM [CredentialModel] AS [c]
+WHERE [c].[Email] = @__Email_0
+INFORMATION: [2022-06-21 08:49:05] cporter@tuta.io is verifed.
+INFORMATION: [2022-06-21 08:49:05] cporter@tuta.io exists, password is valid and is verified, creating a claim for this user!
+INFORMATION: [2022-06-21 08:49:05] cporter@tuta.io claim created and siging in to app
+INFORMATION: [2022-06-21 08:49:05] AuthenticationScheme: MyCookieAuth signed in.
+INFORMATION: [2022-06-21 08:49:05] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+INFORMATION: [2022-06-21 08:49:05] Executing RedirectToPageResult, redirecting to /Folders/Folders.
+INFORMATION: [2022-06-21 08:49:05] Executed page /Account/Login in 1634.6495ms
+INFORMATION: [2022-06-21 08:49:05] Executed endpoint '/Account/Login'
+INFORMATION: [2022-06-21 08:49:05] Request finished in 1654.418ms 302 
+INFORMATION: [2022-06-21 08:49:05] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:49:05] Authorization was successful.
+INFORMATION: [2022-06-21 08:49:05] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:49:05] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:49:05] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:49:06] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:49:06] Executed DbCommand (6ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:49:06] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:49:06] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:49:06] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:49:06] Executed page /Folders/Folders in 82.9746ms
+INFORMATION: [2022-06-21 08:49:06] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:49:06] Request finished in 114.0858ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:49:06] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:49:06] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:49:06] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:49:06] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:49:06] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:49:06] Request finished in 12.7046ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:49:06] Request finished in 19.706ms 200 text/css
+INFORMATION: [2022-06-21 08:49:06] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:49:06] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:49:06] Request finished in 25.3298ms 200 text/css
+INFORMATION: [2022-06-21 08:49:06] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:49:06] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:49:06] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:49:06] Request finished in 48.5871ms 200 application/javascript
+INFORMATION: [2022-06-21 08:49:06] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:49:06] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:49:06] Request finished in 56.7153ms 200 application/javascript
+INFORMATION: [2022-06-21 08:49:06] Request finished in 64.6311ms 200 application/javascript
+INFORMATION: [2022-06-21 08:49:06] Request finished in 68.0073ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:50:13] Request starting HTTP/2 GET https://localhost:61328/Folders/Create  
+INFORMATION: [2022-06-21 08:50:13] Authorization was successful.
+INFORMATION: [2022-06-21 08:50:13] Executing endpoint '/Folders/Create'
+INFORMATION: [2022-06-21 08:50:13] Route matched with {page = "/Folders/Create"}. Executing page /Folders/Create
+INFORMATION: [2022-06-21 08:50:13] Executing handler method MyRepoWebApp.Pages.Folders.CreateModel.OnGet - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:13] Executed handler method OnGet, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:50:13] Executed page /Folders/Create in 19.8833ms
+INFORMATION: [2022-06-21 08:50:13] Executed endpoint '/Folders/Create'
+INFORMATION: [2022-06-21 08:50:13] Request finished in 46.8498ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:50:13] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:50:13] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:50:13] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:50:13] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:50:13] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:50:13] Request starting HTTP/2 GET https://localhost:61328/lib/jquery-validation/dist/jquery.validate.js  
+INFORMATION: [2022-06-21 08:50:13] Request starting HTTP/2 GET https://localhost:61328/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+INFORMATION: [2022-06-21 08:50:13] Request finished in 27.9761ms 200 text/css
+INFORMATION: [2022-06-21 08:50:13] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:50:13] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:50:13] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:50:13] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js'
+INFORMATION: [2022-06-21 08:50:13] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery-validation\dist\jquery.validate.js'
+INFORMATION: [2022-06-21 08:50:13] Request finished in 29.4008ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:13] Request finished in 38.1872ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:13] Request finished in 40.0256ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:13] Request finished in 29.0692ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:50:13] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:50:13] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:50:13] Request finished in 43.392ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:13] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:50:13] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:50:13] Request finished in 61.7282ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:50:13] Request finished in 73.9149ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:13] Request finished in 90.1576ms 200 text/css
+INFORMATION: [2022-06-21 08:50:14] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:50:14] Authorization was successful.
+INFORMATION: [2022-06-21 08:50:14] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:50:14] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:50:14] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:14] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:50:14] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:50:14] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:50:14] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:14] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:50:14] Executed page /Folders/Folders in 27.219ms
+INFORMATION: [2022-06-21 08:50:14] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:50:14] Request finished in 46.6426ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:50:14] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:50:14] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:50:14] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:50:14] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:50:14] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:50:14] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:50:14] Request finished in 17.4178ms 200 text/css
+INFORMATION: [2022-06-21 08:50:14] Request finished in 21.2324ms 200 text/css
+INFORMATION: [2022-06-21 08:50:14] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:50:14] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:50:14] Request finished in 23.488ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:14] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:50:14] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:50:14] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:50:14] Request finished in 43.9994ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:14] Request finished in 45.7716ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:50:14] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:50:14] Request finished in 50.5711ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:14] Request finished in 65.1538ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:50:18] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10004  
+INFORMATION: [2022-06-21 08:50:18] Authorization was successful.
+INFORMATION: [2022-06-21 08:50:18] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:50:18] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:50:18] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:18] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:50:18] Executed DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:50:18] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:50:18] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:18] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:50:18] Executed page /Folders/Uploads/Uploads in 40.1614ms
+INFORMATION: [2022-06-21 08:50:18] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:50:18] Request finished in 60.8233ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:50:18] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:50:18] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:50:18] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:50:18] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:50:18] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:50:18] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:50:18] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:50:18] Request finished in 21.1615ms 200 text/css
+INFORMATION: [2022-06-21 08:50:18] Request finished in 25.086ms 200 text/css
+INFORMATION: [2022-06-21 08:50:18] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:50:18] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:50:18] Request finished in 24.3444ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:50:18] Request finished in 37.0369ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:18] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:50:18] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:50:18] Request finished in 40.7776ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:50:18] Request finished in 56.1896ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:18] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:50:18] Request finished in 67.935ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:25] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:50:25] Authorization was successful.
+INFORMATION: [2022-06-21 08:50:25] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:50:25] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:50:25] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:25] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:50:25] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:50:25] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:50:25] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:25] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:50:25] Executed page /Folders/Folders in 27.3686ms
+INFORMATION: [2022-06-21 08:50:25] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:50:25] Request finished in 46.1024ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:50:25] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:50:25] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:50:25] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:50:25] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:50:25] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:50:25] Request finished in 11.0865ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:50:25] Request finished in 18.0038ms 200 text/css
+INFORMATION: [2022-06-21 08:50:25] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:50:25] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:50:25] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:50:25] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:50:25] Request finished in 36.0332ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:50:25] Request finished in 42.2633ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:25] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:50:25] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:50:25] Request finished in 47.6422ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:25] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:50:25] Request finished in 63.4897ms 200 text/css
+INFORMATION: [2022-06-21 08:50:25] Request finished in 67.0062ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:26] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10005  
+INFORMATION: [2022-06-21 08:50:26] Authorization was successful.
+INFORMATION: [2022-06-21 08:50:26] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:50:26] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:50:26] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:26] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:50:26] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:50:26] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:50:26] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:26] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:50:26] Executed page /Folders/Uploads/Uploads in 24.9882ms
+INFORMATION: [2022-06-21 08:50:26] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:50:26] Request finished in 45.2466ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:50:26] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:50:26] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:50:26] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:50:26] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:50:26] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:50:26] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:50:26] Request finished in 17.6792ms 200 text/css
+INFORMATION: [2022-06-21 08:50:26] Request finished in 21.8823ms 200 text/css
+INFORMATION: [2022-06-21 08:50:26] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:50:26] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:50:26] Request finished in 22.5972ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:26] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:50:26] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:50:26] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:50:26] Request finished in 42.6581ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:26] Request finished in 48.9081ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:50:26] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:50:26] Request finished in 53.6981ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:26] Request finished in 61.4383ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:50:28] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:50:28] Authorization was successful.
+INFORMATION: [2022-06-21 08:50:28] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:50:28] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:50:28] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:28] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:50:28] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:50:28] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:50:28] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:28] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:50:28] Executed page /Folders/Folders in 29.2444ms
+INFORMATION: [2022-06-21 08:50:28] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:50:28] Request finished in 49.6375ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:50:28] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:50:28] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:50:28] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:50:28] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:50:28] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:50:28] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:50:28] Request finished in 16.6825ms 200 text/css
+INFORMATION: [2022-06-21 08:50:28] Request finished in 20.93ms 200 text/css
+INFORMATION: [2022-06-21 08:50:28] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:50:28] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:50:28] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:50:28] Request finished in 35.5192ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:50:28] Request finished in 37.0773ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:50:28] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:50:28] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:50:28] Request finished in 41.4736ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:28] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:50:28] Request finished in 58.7903ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:28] Request finished in 64.7565ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:30] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10004  
+INFORMATION: [2022-06-21 08:50:30] Authorization was successful.
+INFORMATION: [2022-06-21 08:50:30] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:50:30] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:50:30] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:30] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:50:30] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:50:30] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:50:30] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:30] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:50:30] Executed page /Folders/Uploads/Uploads in 25.1108ms
+INFORMATION: [2022-06-21 08:50:30] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:50:30] Request finished in 45.102ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:50:30] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:50:30] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:50:30] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:50:30] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:50:30] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:50:30] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:50:30] Request finished in 15.4656ms 200 text/css
+INFORMATION: [2022-06-21 08:50:30] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:50:30] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:50:30] Request finished in 20.9766ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:30] Request finished in 26.1992ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:30] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:50:30] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:50:30] Request finished in 28.4943ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:50:30] Request finished in 43.3152ms 200 text/css
+INFORMATION: [2022-06-21 08:50:30] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:50:30] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:50:30] Request finished in 58.1517ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:30] Request finished in 56.7088ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:50:34] Request starting HTTP/2 POST https://localhost:61328/Folders/Uploads/Uploads?handler=Upload multipart/form-data; boundary=----WebKitFormBoundarygoEMa9yZ0LAnbHvE 2698
+INFORMATION: [2022-06-21 08:50:34] Authorization was successful.
+INFORMATION: [2022-06-21 08:50:34] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:50:34] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:50:34] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnPostUploadAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:34] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:50:34] Executed DbCommand (2ms) [Parameters=[@p0='?' (Size = 8000) (DbType = Binary)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Content] ([Contents])
+VALUES (@p0);
+SELECT [Id]
+FROM [Content]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+INFORMATION: [2022-06-21 08:50:34] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 8000) (DbType = Binary), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Upload] ([ContentId], [FolderId], [Name], [Owner], [Thumbnail], [Type], [UpdateDate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [Upload]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+INFORMATION: [2022-06-21 08:50:34] Executed handler method OnPostUploadAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+INFORMATION: [2022-06-21 08:50:34] Executing RedirectToPageResult, redirecting to /Folders/Uploads/Uploads.
+INFORMATION: [2022-06-21 08:50:34] Executed page /Folders/Uploads/Uploads in 189.9854ms
+INFORMATION: [2022-06-21 08:50:34] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:50:34] Request finished in 210.5699ms 302 
+INFORMATION: [2022-06-21 08:50:34] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10004  
+INFORMATION: [2022-06-21 08:50:34] Authorization was successful.
+INFORMATION: [2022-06-21 08:50:34] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:50:34] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:50:34] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:34] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:50:34] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:50:34] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:50:34] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:50:34] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:50:34] Executed page /Folders/Uploads/Uploads in 27.8085ms
+INFORMATION: [2022-06-21 08:50:34] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:50:34] Request finished in 47.3744ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:50:34] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:50:34] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:50:34] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:50:34] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:50:34] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:50:34] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:50:34] Request finished in 18.8816ms 200 text/css
+INFORMATION: [2022-06-21 08:50:34] Request finished in 23.5184ms 200 text/css
+INFORMATION: [2022-06-21 08:50:34] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:50:34] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:50:34] Request finished in 25.7148ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:34] Request finished in 36.0883ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:50:34] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:50:34] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:50:34] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:50:34] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:50:34] Request finished in 58.4196ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:50:34] Request finished in 61.2687ms 200 application/javascript
+INFORMATION: [2022-06-21 08:50:34] Request finished in 64.5364ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:01] Request starting HTTP/2 POST https://localhost:61328/Folders/Uploads/Uploads?handler=Upload multipart/form-data; boundary=----WebKitFormBoundaryyRnKTvxGoVC1ZcTp 11588680
+INFORMATION: [2022-06-21 08:51:01] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:01] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:01] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:51:01] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnPostUploadAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:02] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:02] Executed DbCommand (34ms) [Parameters=[@p0='?' (Size = -1) (DbType = Binary)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Content] ([Contents])
+VALUES (@p0);
+SELECT [Id]
+FROM [Content]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+INFORMATION: [2022-06-21 08:51:02] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 8000) (DbType = Binary), @p5='?' (Size = 4000), @p6='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Upload] ([ContentId], [FolderId], [Name], [Owner], [Thumbnail], [Type], [UpdateDate])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6);
+SELECT [Id]
+FROM [Upload]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+INFORMATION: [2022-06-21 08:51:02] Executed handler method OnPostUploadAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+INFORMATION: [2022-06-21 08:51:02] Executing RedirectToPageResult, redirecting to /Folders/Uploads/Uploads.
+INFORMATION: [2022-06-21 08:51:02] Executed page /Folders/Uploads/Uploads in 624.1811ms
+INFORMATION: [2022-06-21 08:51:02] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:02] Request finished in 644.338ms 302 
+INFORMATION: [2022-06-21 08:51:02] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10004  
+INFORMATION: [2022-06-21 08:51:02] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:02] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:02] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:51:02] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:02] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:02] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:51:02] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:02] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:02] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:02] Executed page /Folders/Uploads/Uploads in 27.152ms
+INFORMATION: [2022-06-21 08:51:02] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:02] Request finished in 46.7968ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:02] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:02] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:02] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:02] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:02] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:02] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:02] Request finished in 17.2076ms 200 text/css
+INFORMATION: [2022-06-21 08:51:02] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:02] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:02] Request finished in 23.3517ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:02] Request finished in 30.2246ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:02] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:02] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:02] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:02] Request finished in 41.3833ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:02] Request finished in 46.6039ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:02] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:02] Request finished in 49.8919ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:02] Request finished in 65.1537ms 200 text/css
+INFORMATION: [2022-06-21 08:51:10] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?Id=10006&handler=DownloadFile  
+INFORMATION: [2022-06-21 08:51:10] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:10] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:10] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:51:10] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetDownloadFile - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:10] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:10] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE [u].[Id] = @__p_0
+INFORMATION: [2022-06-21 08:51:10] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[Contents]
+FROM [Content] AS [c]
+WHERE [c].[Id] = @__p_0
+INFORMATION: [2022-06-21 08:51:13] Executed handler method OnGetDownloadFile, returned result Microsoft.AspNetCore.Mvc.FileContentResult.
+INFORMATION: [2022-06-21 08:51:13] Executing Microsoft.AspNetCore.Mvc.FileContentResult, sending file with download name 'Failed (1) (1).jpg' ...
+INFORMATION: [2022-06-21 08:51:13] Executed page /Folders/Uploads/Uploads in 2861.0918ms
+INFORMATION: [2022-06-21 08:51:13] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:13] Request finished in 2880.3462ms 200 image/jpeg
+INFORMATION: [2022-06-21 08:51:14] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Details?id=10005  
+INFORMATION: [2022-06-21 08:51:14] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:14] Executing endpoint '/Folders/Uploads/Details'
+INFORMATION: [2022-06-21 08:51:14] Route matched with {page = "/Folders/Uploads/Details"}. Executing page /Folders/Uploads/Details
+INFORMATION: [2022-06-21 08:51:14] Executing handler method MyRepoWebApp.Pages.Uploads.DetailsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:14] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:14] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE [u].[Id] = @__id_0
+INFORMATION: [2022-06-21 08:51:14] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:14] Executed page /Folders/Uploads/Details in 27.2277ms
+INFORMATION: [2022-06-21 08:51:14] Executed endpoint '/Folders/Uploads/Details'
+INFORMATION: [2022-06-21 08:51:14] Request finished in 48.3086ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:14] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:14] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:14] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:14] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:14] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:14] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:14] Request finished in 17.3591ms 200 text/css
+INFORMATION: [2022-06-21 08:51:14] Request finished in 21.498ms 200 text/css
+INFORMATION: [2022-06-21 08:51:14] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:14] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:14] Request finished in 22.8819ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:14] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:14] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:14] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:14] Request finished in 44.5741ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:14] Request finished in 46.8917ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:14] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:14] Request finished in 51.5342ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:14] Request finished in 68.455ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:15] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10004  
+INFORMATION: [2022-06-21 08:51:15] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:15] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:15] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:51:15] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:15] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:15] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:51:15] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:15] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:15] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:15] Executed page /Folders/Uploads/Uploads in 27.9672ms
+INFORMATION: [2022-06-21 08:51:15] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:15] Request finished in 48.7825ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:15] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:15] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:15] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:15] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:15] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:15] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:15] Request finished in 17.0488ms 200 text/css
+INFORMATION: [2022-06-21 08:51:15] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:15] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:15] Request finished in 22.1804ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:15] Request finished in 29.5088ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:15] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:15] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:15] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:15] Request finished in 43.2986ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:15] Request finished in 51.4628ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:15] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:15] Request finished in 51.0211ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:15] Request finished in 66.0915ms 200 text/css
+INFORMATION: [2022-06-21 08:51:16] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Details?id=10006  
+INFORMATION: [2022-06-21 08:51:16] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:16] Executing endpoint '/Folders/Uploads/Details'
+INFORMATION: [2022-06-21 08:51:16] Route matched with {page = "/Folders/Uploads/Details"}. Executing page /Folders/Uploads/Details
+INFORMATION: [2022-06-21 08:51:16] Executing handler method MyRepoWebApp.Pages.Uploads.DetailsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:16] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:16] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE [u].[Id] = @__id_0
+INFORMATION: [2022-06-21 08:51:16] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:16] Executed page /Folders/Uploads/Details in 16.9381ms
+INFORMATION: [2022-06-21 08:51:16] Executed endpoint '/Folders/Uploads/Details'
+INFORMATION: [2022-06-21 08:51:16] Request finished in 35.4205ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:16] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:16] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:16] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:16] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:16] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:16] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:16] Request finished in 17.2053ms 200 text/css
+INFORMATION: [2022-06-21 08:51:16] Request finished in 21.562ms 200 text/css
+INFORMATION: [2022-06-21 08:51:16] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:16] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:16] Request finished in 23.1833ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:16] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:16] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:16] Request finished in 34.9205ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:16] Request finished in 42.6553ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:16] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:16] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:16] Request finished in 61.0545ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:16] Request finished in 65.1646ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:17] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10004  
+INFORMATION: [2022-06-21 08:51:17] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:17] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:17] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:51:17] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:17] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:18] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:51:18] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:18] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:18] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:18] Executed page /Folders/Uploads/Uploads in 25.9688ms
+INFORMATION: [2022-06-21 08:51:18] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:18] Request finished in 43.9042ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:18] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:18] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:18] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:18] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:18] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:18] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:18] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:18] Request finished in 19.199ms 200 text/css
+INFORMATION: [2022-06-21 08:51:18] Request finished in 22.1299ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:18] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:18] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:18] Request finished in 24.1527ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:18] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:18] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:18] Request finished in 37.3818ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:18] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:18] Request finished in 46.5477ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:18] Request finished in 49.9288ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:18] Request finished in 60.8721ms 200 text/css
+INFORMATION: [2022-06-21 08:51:19] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Delete?id=10006  
+INFORMATION: [2022-06-21 08:51:19] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:19] Executing endpoint '/Folders/Uploads/Delete'
+INFORMATION: [2022-06-21 08:51:19] Route matched with {page = "/Folders/Uploads/Delete"}. Executing page /Folders/Uploads/Delete
+INFORMATION: [2022-06-21 08:51:19] Executing handler method MyRepoWebApp.Pages.Uploads.DeleteModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:19] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:19] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE [u].[Id] = @__p_0
+INFORMATION: [2022-06-21 08:51:19] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:19] Executed page /Folders/Uploads/Delete in 23.8264ms
+INFORMATION: [2022-06-21 08:51:19] Executed endpoint '/Folders/Uploads/Delete'
+INFORMATION: [2022-06-21 08:51:19] Request finished in 43.4077ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:19] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:19] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:19] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:19] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:19] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:19] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:19] Request finished in 17.837ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:19] Request finished in 23.2377ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:19] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:19] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:19] Request finished in 26.6266ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:19] Request finished in 38.9193ms 200 text/css
+INFORMATION: [2022-06-21 08:51:19] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:19] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:19] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:19] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:19] Request finished in 52.7232ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:19] Request finished in 59.7147ms 200 text/css
+INFORMATION: [2022-06-21 08:51:19] Request finished in 60.5814ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:20] Request starting HTTP/2 POST https://localhost:61328/Folders/Uploads/Delete?id=10006 application/x-www-form-urlencoded 241
+INFORMATION: [2022-06-21 08:51:20] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:20] Executing endpoint '/Folders/Uploads/Delete'
+INFORMATION: [2022-06-21 08:51:20] Route matched with {page = "/Folders/Uploads/Delete"}. Executing page /Folders/Uploads/Delete
+INFORMATION: [2022-06-21 08:51:20] Executing handler method MyRepoWebApp.Pages.Uploads.DeleteModel.OnPostAsync - ModelState is Invalid
+INFORMATION: [2022-06-21 08:51:20] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:20] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE [u].[Id] = @__p_0
+INFORMATION: [2022-06-21 08:51:20] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Upload]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+INFORMATION: [2022-06-21 08:51:20] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult.
+INFORMATION: [2022-06-21 08:51:20] Executing RedirectToPageResult, redirecting to ./Uploads.
+INFORMATION: [2022-06-21 08:51:20] Executed page /Folders/Uploads/Delete in 24.9912ms
+INFORMATION: [2022-06-21 08:51:20] Executed endpoint '/Folders/Uploads/Delete'
+INFORMATION: [2022-06-21 08:51:20] Request finished in 44.0072ms 302 
+INFORMATION: [2022-06-21 08:51:20] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10004  
+INFORMATION: [2022-06-21 08:51:20] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:20] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:20] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:51:20] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:20] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:20] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:51:20] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:20] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:20] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:20] Executed page /Folders/Uploads/Uploads in 25.014ms
+INFORMATION: [2022-06-21 08:51:20] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:20] Request finished in 46.4637ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:20] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:20] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:20] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:20] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:20] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:20] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:20] Request finished in 16.6559ms 200 text/css
+INFORMATION: [2022-06-21 08:51:20] Request finished in 22.6442ms 200 text/css
+INFORMATION: [2022-06-21 08:51:20] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:20] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:20] Request finished in 24.487ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:20] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:20] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:20] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:20] Request finished in 46.5579ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:20] Request finished in 48.1505ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:20] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:20] Request finished in 53.2968ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:20] Request finished in 67.7292ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:25] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Details?id=10005  
+INFORMATION: [2022-06-21 08:51:25] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:25] Executing endpoint '/Folders/Uploads/Details'
+INFORMATION: [2022-06-21 08:51:25] Route matched with {page = "/Folders/Uploads/Details"}. Executing page /Folders/Uploads/Details
+INFORMATION: [2022-06-21 08:51:25] Executing handler method MyRepoWebApp.Pages.Uploads.DetailsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:25] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:25] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE [u].[Id] = @__id_0
+INFORMATION: [2022-06-21 08:51:25] Executed handler method OnGetAsync, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:25] Executed page /Folders/Uploads/Details in 19.4177ms
+INFORMATION: [2022-06-21 08:51:25] Executed endpoint '/Folders/Uploads/Details'
+INFORMATION: [2022-06-21 08:51:25] Request finished in 38.1354ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:25] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:25] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:25] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:25] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:25] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:25] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:25] Request finished in 15.4354ms 200 text/css
+INFORMATION: [2022-06-21 08:51:25] Request finished in 20.9909ms 200 text/css
+INFORMATION: [2022-06-21 08:51:25] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:25] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:25] Request finished in 22.7972ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:25] Request finished in 31.9028ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:25] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:25] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:25] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:25] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:25] Request finished in 52.2934ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:25] Request finished in 56.4702ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:25] Request finished in 60.6636ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:26] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10004  
+INFORMATION: [2022-06-21 08:51:26] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:26] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:26] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:51:26] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:26] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:26] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:51:26] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:26] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:26] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:26] Executed page /Folders/Uploads/Uploads in 25.9432ms
+INFORMATION: [2022-06-21 08:51:26] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:26] Request finished in 45.7683ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:26] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:26] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:26] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:26] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:26] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:26] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:26] Request finished in 15.5272ms 200 text/css
+INFORMATION: [2022-06-21 08:51:26] Request finished in 20.6202ms 200 text/css
+INFORMATION: [2022-06-21 08:51:26] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:26] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:26] Request finished in 21.4771ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:26] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:26] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:26] Request finished in 33.8813ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:26] Request finished in 44.3852ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:26] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:26] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:26] Request finished in 61.6391ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:26] Request finished in 65.0124ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:51:27] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:27] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:27] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:51:27] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:27] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:27] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:51:27] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:27] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:27] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:27] Executed page /Folders/Folders in 24.5851ms
+INFORMATION: [2022-06-21 08:51:27] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:27] Request finished in 43.9972ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:27] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:27] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:27] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:27] Request finished in 16.1875ms 200 text/css
+INFORMATION: [2022-06-21 08:51:27] Request finished in 21.3674ms 200 text/css
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:27] Request finished in 23.2735ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:27] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:27] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:27] Request finished in 44.7555ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:27] Request finished in 46.5652ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:27] Request finished in 51.6074ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:27] Request finished in 65.8811ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:51:27] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:27] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:27] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:51:27] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:27] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:27] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:51:27] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:27] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:27] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:27] Executed page /Folders/Folders in 24.3094ms
+INFORMATION: [2022-06-21 08:51:27] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:27] Request finished in 45.3372ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:27] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:27] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:27] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:27] Request finished in 15.2691ms 200 text/css
+INFORMATION: [2022-06-21 08:51:27] Request finished in 20.3095ms 200 text/css
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:27] Request finished in 19.3781ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:27] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:27] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:27] Request finished in 43.8468ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:27] Request finished in 45.1545ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:27] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:27] Request finished in 51.4842ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:27] Request finished in 66.2044ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:32] Request starting HTTP/2 GET https://localhost:61328/Account/Users  
+INFORMATION: [2022-06-21 08:51:32] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:32] Executing endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:32] Route matched with {page = "/Account/Users"}. Executing page /Account/Users
+INFORMATION: [2022-06-21 08:51:32] Executing handler method MyRepoWebApp.Pages.Account.UsersModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:32] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:32] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[UserId], [c].[ActivationCode], [c].[Admin], [c].[Email], [c].[Password], [c].[RememberMe], [c].[Verified]
+FROM [CredentialModel] AS [c]
+INFORMATION: [2022-06-21 08:51:32] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:32] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:32] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:32] Executed page /Account/Users in 33.4494ms
+ERROR: [2022-06-21 08:51:32] An unhandled exception has occurred while executing the request.
+INFORMATION: [2022-06-21 08:51:32] Request finished in 128.28ms 500 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:32] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:32] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:32] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:32] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:32] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:32] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:32] Request finished in 14.5393ms 200 text/css
+INFORMATION: [2022-06-21 08:51:32] Request finished in 21.0309ms 200 text/css
+INFORMATION: [2022-06-21 08:51:32] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:32] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:32] Request finished in 21.7422ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:32] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:32] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:32] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:32] Request finished in 42.1901ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:32] Request finished in 43.6435ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:32] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:32] Request finished in 48.8559ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:32] Request finished in 66.6017ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:51:33] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:33] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:33] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:51:33] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:33] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:33] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:51:33] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:33] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:33] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:33] Executed page /Folders/Folders in 24.7749ms
+INFORMATION: [2022-06-21 08:51:33] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:33] Request finished in 42.6086ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:33] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:33] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:33] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:33] Request finished in 16.2471ms 200 text/css
+INFORMATION: [2022-06-21 08:51:33] Request finished in 20.7354ms 200 text/css
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:33] Request finished in 22.0089ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:33] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:33] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:33] Request finished in 43.7368ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:33] Request finished in 46.9069ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:33] Request finished in 52.9656ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:33] Request finished in 66.8994ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/Account/Users  
+INFORMATION: [2022-06-21 08:51:33] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:33] Executing endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:33] Route matched with {page = "/Account/Users"}. Executing page /Account/Users
+INFORMATION: [2022-06-21 08:51:33] Executing handler method MyRepoWebApp.Pages.Account.UsersModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:33] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:33] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[UserId], [c].[ActivationCode], [c].[Admin], [c].[Email], [c].[Password], [c].[RememberMe], [c].[Verified]
+FROM [CredentialModel] AS [c]
+INFORMATION: [2022-06-21 08:51:33] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:33] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:33] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:33] Executed page /Account/Users in 22.6697ms
+INFORMATION: [2022-06-21 08:51:33] Executed endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:33] Request finished in 42.798ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:33] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:33] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:33] Request finished in 15.7985ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:33] Request finished in 22.7839ms 200 text/css
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:33] Request finished in 28.7145ms 200 text/css
+INFORMATION: [2022-06-21 08:51:33] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:33] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:33] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:33] Request finished in 49.543ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:33] Request finished in 49.9278ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:33] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:33] Request finished in 56.0939ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:33] Request finished in 70.1378ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:34] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:51:34] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:34] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:34] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:51:34] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:34] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:34] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:51:34] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:34] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:34] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:34] Executed page /Folders/Folders in 25.8539ms
+INFORMATION: [2022-06-21 08:51:34] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:34] Request finished in 45.5304ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:34] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:34] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:34] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:34] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:34] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:34] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:34] Request finished in 15.5605ms 200 text/css
+INFORMATION: [2022-06-21 08:51:34] Request finished in 21.4741ms 200 text/css
+INFORMATION: [2022-06-21 08:51:34] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:34] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:34] Request finished in 24.1188ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:34] Request finished in 31.7698ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:34] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:34] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:34] Request finished in 37.6034ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:34] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:34] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:34] Request finished in 67.3017ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:34] Request finished in 70.5217ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:35] Request starting HTTP/2 GET https://localhost:61328/Account/Users  
+INFORMATION: [2022-06-21 08:51:35] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:35] Executing endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:35] Route matched with {page = "/Account/Users"}. Executing page /Account/Users
+INFORMATION: [2022-06-21 08:51:35] Executing handler method MyRepoWebApp.Pages.Account.UsersModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:35] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:35] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[UserId], [c].[ActivationCode], [c].[Admin], [c].[Email], [c].[Password], [c].[RememberMe], [c].[Verified]
+FROM [CredentialModel] AS [c]
+INFORMATION: [2022-06-21 08:51:35] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:35] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:35] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:35] Executed page /Account/Users in 23.7553ms
+INFORMATION: [2022-06-21 08:51:35] Executed endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:35] Request finished in 43.3727ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:35] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:35] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:35] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:35] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:35] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:35] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:35] Request finished in 15.7347ms 200 text/css
+INFORMATION: [2022-06-21 08:51:35] Request finished in 19.9469ms 200 text/css
+INFORMATION: [2022-06-21 08:51:35] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:35] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:35] Request finished in 21.3198ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:35] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:35] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:35] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:35] Request finished in 41.786ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:35] Request finished in 46.3258ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:35] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:35] Request finished in 50.761ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:35] Request finished in 60.804ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:35] Request starting HTTP/2 GET https://localhost:61328/Account/Users  
+INFORMATION: [2022-06-21 08:51:35] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:35] Executing endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:35] Route matched with {page = "/Account/Users"}. Executing page /Account/Users
+INFORMATION: [2022-06-21 08:51:35] Executing handler method MyRepoWebApp.Pages.Account.UsersModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:35] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:35] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[UserId], [c].[ActivationCode], [c].[Admin], [c].[Email], [c].[Password], [c].[RememberMe], [c].[Verified]
+FROM [CredentialModel] AS [c]
+INFORMATION: [2022-06-21 08:51:35] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:35] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:35] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:35] Executed page /Account/Users in 23.3899ms
+INFORMATION: [2022-06-21 08:51:36] Executed endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:36] Request finished in 40.9457ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:36] Request finished in 16.3386ms 200 text/css
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:36] Request finished in 28.2375ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:36] Request finished in 30.7412ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:36] Request finished in 36.191ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:36] Request finished in 46.769ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:36] Request finished in 52.2568ms 200 text/css
+INFORMATION: [2022-06-21 08:51:36] Request finished in 59.0747ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:51:36] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:36] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:36] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:51:36] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:36] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:36] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:51:36] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:36] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:36] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:36] Executed page /Folders/Folders in 23.5279ms
+INFORMATION: [2022-06-21 08:51:36] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:36] Request finished in 42.4247ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:36] Request finished in 16.7979ms 200 text/css
+INFORMATION: [2022-06-21 08:51:36] Request finished in 20.6412ms 200 text/css
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:36] Request finished in 21.9016ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:36] Request finished in 29.7037ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:36] Request finished in 34.9505ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:36] Request finished in 57.341ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:36] Request finished in 62.0758ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:51:36] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:36] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:36] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:51:36] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:36] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:36] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:51:36] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:36] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:36] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:36] Executed page /Folders/Folders in 23.4524ms
+INFORMATION: [2022-06-21 08:51:36] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:36] Request finished in 42.0563ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:36] Request finished in 16.0762ms 200 text/css
+INFORMATION: [2022-06-21 08:51:36] Request finished in 20.5427ms 200 text/css
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:36] Request finished in 21.9726ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:36] Request finished in 32.2933ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:36] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:36] Request finished in 34.6685ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:36] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:36] Request finished in 57.548ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:36] Request finished in 62.3518ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:37] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10005  
+INFORMATION: [2022-06-21 08:51:37] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:37] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:37] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:51:37] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:37] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:37] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:51:37] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:37] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:37] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:37] Executed page /Folders/Uploads/Uploads in 26.316ms
+INFORMATION: [2022-06-21 08:51:37] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:37] Request finished in 46.0433ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:37] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:37] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:37] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:37] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:37] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:37] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:37] Request finished in 17.6942ms 200 text/css
+INFORMATION: [2022-06-21 08:51:37] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:37] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:37] Request finished in 22.9969ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:37] Request finished in 28.8024ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:37] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:37] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:37] Request finished in 36.3714ms 200 text/css
+INFORMATION: [2022-06-21 08:51:37] Request finished in 43.9047ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:37] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:37] Request finished in 46.1543ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:37] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:37] Request finished in 68.3895ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:38] Request starting HTTP/2 GET https://localhost:61328/Account/Users  
+INFORMATION: [2022-06-21 08:51:38] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:38] Executing endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:38] Route matched with {page = "/Account/Users"}. Executing page /Account/Users
+INFORMATION: [2022-06-21 08:51:38] Executing handler method MyRepoWebApp.Pages.Account.UsersModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:38] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:38] Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[UserId], [c].[ActivationCode], [c].[Admin], [c].[Email], [c].[Password], [c].[RememberMe], [c].[Verified]
+FROM [CredentialModel] AS [c]
+INFORMATION: [2022-06-21 08:51:38] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:38] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:38] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:38] Executed page /Account/Users in 24.2865ms
+INFORMATION: [2022-06-21 08:51:38] Executed endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:38] Request finished in 44.4665ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:38] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:38] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:38] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:38] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:38] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:38] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:38] Request finished in 16.2233ms 200 text/css
+INFORMATION: [2022-06-21 08:51:38] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:38] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:38] Request finished in 22.9363ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:38] Request finished in 31.2875ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:38] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:38] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:38] Request finished in 31.9962ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:38] Request finished in 47.9363ms 200 text/css
+INFORMATION: [2022-06-21 08:51:38] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:38] Request finished in 48.7213ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:38] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:38] Request finished in 67.5315ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:38] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:51:38] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:38] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:38] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:51:38] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:38] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+ERROR: [2022-06-21 08:51:38] Failed executing DbCommand (2ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+ERROR: [2022-06-21 08:51:39] An exception occurred while iterating over the results of a query for context type 'MyRepoWebApp.Data.MyRepoWebAppContext'.
+System.AggregateException: An error occurred while writing to logger(s). (The process cannot access the file 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\log.txt' because it is being used by another process.)
+ ---> System.IO.IOException: The process cannot access the file 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\log.txt' because it is being used by another process.
+   at System.IO.FileStream.ValidateFileHandle(SafeFileHandle fileHandle)
+   at System.IO.FileStream.CreateFileOpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at Dna.FileLogger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+   at Microsoft.Extensions.Logging.Logger.<Log>g__LoggerLog|12_0[TState](LogLevel logLevel, EventId eventId, ILogger logger, Exception exception, Func`3 formatter, List`1& exceptions, TState& state)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.Logging.Logger.ThrowLoggingError(List`1 exceptions)
+   at Microsoft.Extensions.Logging.Logger.Log[TState](LogLevel logLevel, EventId eventId, TState state, Exception exception, Func`3 formatter)
+   at Microsoft.Extensions.Logging.LoggerMessage.<>c__DisplayClass10_0`6.<Define>b__0(ILogger logger, T1 arg1, T2 arg2, T3 arg3, T4 arg4, T5 arg5, T6 arg6, Exception exception)
+   at Microsoft.EntityFrameworkCore.Diagnostics.RelationalLoggerExtensions.LogCommandExecuted(IDiagnosticsLogger`1 diagnostics, DbCommand command, TimeSpan duration, EventDefinition`6 definition)
+   at Microsoft.EntityFrameworkCore.Diagnostics.RelationalLoggerExtensions.CommandReaderExecutedAsync(IDiagnosticsLogger`1 diagnostics, IRelationalConnection connection, DbCommand command, DbContext context, Guid commandId, Guid connectionId, DbDataReader methodResult, DateTimeOffset startTime, TimeSpan duration, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+INFORMATION: [2022-06-21 08:51:39] Executed page /Folders/Folders in 51.7099ms
+INFORMATION: [2022-06-21 08:51:39] Executed endpoint '/Folders/Folders'
+ERROR: [2022-06-21 08:51:39] An unhandled exception has occurred while executing the request.
+INFORMATION: [2022-06-21 08:51:39] Request finished in 99.5724ms 500 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:39] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:39] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:39] Request finished in 5.8862ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:39] Request finished in 7.4027ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:52] Request starting HTTP/2 GET https://localhost:61328/Account/Users  
+INFORMATION: [2022-06-21 08:51:52] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:52] Executing endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:52] Route matched with {page = "/Account/Users"}. Executing page /Account/Users
+INFORMATION: [2022-06-21 08:51:52] Executing handler method MyRepoWebApp.Pages.Account.UsersModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:52] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:52] Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[UserId], [c].[ActivationCode], [c].[Admin], [c].[Email], [c].[Password], [c].[RememberMe], [c].[Verified]
+FROM [CredentialModel] AS [c]
+INFORMATION: [2022-06-21 08:51:52] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:52] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:52] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:52] Executed page /Account/Users in 23.0133ms
+INFORMATION: [2022-06-21 08:51:52] Executed endpoint '/Account/Users'
+INFORMATION: [2022-06-21 08:51:52] Request finished in 40.3108ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:52] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:52] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:52] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:52] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:52] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:52] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:52] Request finished in 19.3993ms 200 text/css
+INFORMATION: [2022-06-21 08:51:52] Request finished in 23.1848ms 200 text/css
+INFORMATION: [2022-06-21 08:51:52] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:52] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:52] Request finished in 24.3726ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:52] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:52] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:52] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:52] Request finished in 45.1845ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:52] Request finished in 50.1329ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:52] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:52] Request finished in 54.8987ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:52] Request finished in 65.6559ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:54] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:51:54] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:54] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:54] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:51:54] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:54] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:54] Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:51:54] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:54] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:54] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:54] Executed page /Folders/Folders in 22.9553ms
+INFORMATION: [2022-06-21 08:51:54] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:54] Request finished in 41.718ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:54] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:54] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:54] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:54] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:54] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:54] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:54] Request finished in 15.3354ms 200 text/css
+INFORMATION: [2022-06-21 08:51:54] Request finished in 20.497ms 200 text/css
+INFORMATION: [2022-06-21 08:51:54] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:54] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:54] Request finished in 22.1802ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:54] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:54] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:54] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:54] Request finished in 43.2225ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:54] Request finished in 44.8076ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:54] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:54] Request finished in 49.2425ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:54] Request finished in 63.9909ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:58] Request starting HTTP/2 GET https://localhost:61328/Folders/Uploads/Uploads?id=10005  
+INFORMATION: [2022-06-21 08:51:58] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:58] Executing endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:58] Route matched with {page = "/Folders/Uploads/Uploads"}. Executing page /Folders/Uploads/Uploads
+INFORMATION: [2022-06-21 08:51:58] Executing handler method MyRepoWebApp.Pages.Uploads.UploadsModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:58] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:58] Executed DbCommand (0ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000), @__folderId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[ContentId], [u].[FolderId], [u].[Name], [u].[Owner], [u].[Thumbnail], [u].[Type], [u].[UpdateDate]
+FROM [Upload] AS [u]
+WHERE ([u].[Owner] = @__User_Identity_Name_0) AND ([u].[FolderId] = @__folderId_1)
+INFORMATION: [2022-06-21 08:51:58] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:58] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:58] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:58] Executed page /Folders/Uploads/Uploads in 22.1609ms
+INFORMATION: [2022-06-21 08:51:58] Executed endpoint '/Folders/Uploads/Uploads'
+INFORMATION: [2022-06-21 08:51:58] Request finished in 40.1417ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:58] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:58] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:58] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:58] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:58] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:58] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:58] Request finished in 17.8236ms 200 text/css
+INFORMATION: [2022-06-21 08:51:58] Request finished in 21.6905ms 200 text/css
+INFORMATION: [2022-06-21 08:51:58] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:58] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:58] Request finished in 23.3303ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:58] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:58] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:58] Request finished in 34.805ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:58] Request finished in 43.2984ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:58] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:58] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:58] Request finished in 59.9114ms 200 text/javascript; charset=UTF-8
+INFORMATION: [2022-06-21 08:51:58] Request finished in 63.9439ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:59] Request starting HTTP/2 GET https://localhost:61328/Folders/Folders  
+INFORMATION: [2022-06-21 08:51:59] Authorization was successful.
+INFORMATION: [2022-06-21 08:51:59] Executing endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:59] Route matched with {page = "/Folders/Folders"}. Executing page /Folders/Folders
+INFORMATION: [2022-06-21 08:51:59] Executing handler method MyRepoWebApp.Pages.Folders.IndexModel.OnGetAsync - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:59] Entity Framework Core 3.1.25 initialized 'MyRepoWebAppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2022-06-21 08:51:59] Executed DbCommand (1ms) [Parameters=[@__User_Identity_Name_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [f].[ID], [f].[Name], [f].[UpdateDate], [f].[owner]
+FROM [FolderModel] AS [f]
+WHERE [f].[owner] = @__User_Identity_Name_0
+INFORMATION: [2022-06-21 08:51:59] Executed handler method OnGetAsync, returned result .
+INFORMATION: [2022-06-21 08:51:59] Executing an implicit handler method - ModelState is Valid
+INFORMATION: [2022-06-21 08:51:59] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+INFORMATION: [2022-06-21 08:51:59] Executed page /Folders/Folders in 24.8005ms
+INFORMATION: [2022-06-21 08:51:59] Executed endpoint '/Folders/Folders'
+INFORMATION: [2022-06-21 08:51:59] Request finished in 46.1149ms 200 text/html; charset=utf-8
+INFORMATION: [2022-06-21 08:51:59] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/css/bootstrap.css  
+INFORMATION: [2022-06-21 08:51:59] Request starting HTTP/2 GET https://localhost:61328/lib/jquery/dist/jquery.js  
+INFORMATION: [2022-06-21 08:51:59] Request starting HTTP/2 GET https://localhost:61328/css/site.css  
+INFORMATION: [2022-06-21 08:51:59] Request starting HTTP/2 GET https://localhost:61328/lib/bootstrap/dist/js/bootstrap.bundle.js  
+INFORMATION: [2022-06-21 08:51:59] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\jquery\dist\jquery.js'
+INFORMATION: [2022-06-21 08:51:59] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\css\site.css'
+INFORMATION: [2022-06-21 08:51:59] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js'
+INFORMATION: [2022-06-21 08:51:59] Request finished in 20.5121ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:59] Request finished in 24.7205ms 200 text/css
+INFORMATION: [2022-06-21 08:51:59] Request starting HTTP/2 GET https://localhost:61328/js/site.js?v=dLGP40S79Xnx6GqUthRF6NWvjvhQ1nOvdVSwaNcgG18  
+INFORMATION: [2022-06-21 08:51:59] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+INFORMATION: [2022-06-21 08:51:59] Request finished in 26.8589ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:59] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\gaming\Source\Repos\MyRepoWebApp\src\wwwroot\js\site.js'
+INFORMATION: [2022-06-21 08:51:59] Request starting HTTP/2 GET https://localhost:61328/_framework/aspnetcore-browser-refresh.js  
+INFORMATION: [2022-06-21 08:51:59] Request finished in 43.5545ms 200 text/css
+INFORMATION: [2022-06-21 08:51:59] Request finished in 47.2919ms 200 application/javascript
+INFORMATION: [2022-06-21 08:51:59] Request starting HTTP/2 GET https://localhost:61328/_vs/browserLink  
+INFORMATION: [2022-06-21 08:51:59] Request finished in 50.7195ms 200 application/javascript; charset=utf-8
+INFORMATION: [2022-06-21 08:51:59] Request finished in 64.9692ms 200 text/javascript; charset=UTF-8
