@@ -48,11 +48,7 @@ namespace MyRepoWebApp
              .ConfigureWebHostDefaults(webBuilder =>
              {
                  //add dns framework
-                 webBuilder.UseDnaFramework(construct =>
-                 {
-                     //add file logger
-                     construct.AddFileLogger();
-                 });
+                 webBuilder.UseDnaFramework();
                  webBuilder.UseStartup<Startup>();
              });
     }
