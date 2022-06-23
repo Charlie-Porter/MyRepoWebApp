@@ -23,5 +23,6 @@ namespace MyRepoWebApp.Data
         public DbSet<CredentialModel> CredentialModel { get; set; }
 
         public DbSet<FolderModel> FolderModel { get; set; } 
+        public DbSet<ApplicationUser> ApplicationUser { get; set; } 
     }
 }

@@ -21,16 +21,16 @@
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="Dna.Framework" Version="1.0.7.19" />
     <PackageReference Include="Dna.Framework.AspNet" Version="1.0.8" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.24" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.26" />
     <PackageReference Include="Microsoft.Azure.SignalR" Version="1.4.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.25" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.24" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.24" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.24">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.26">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="3.1.25" />
+    <PackageReference Include="Microsoft.Extensions.Logging.AzureAppServices" Version="3.1.26" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="SendGrid" Version="9.28.0" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="6.0.0" />
@@ -38,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Functions\" />
     <Folder Include="Migrations\" />
     <Folder Include="wwwroot\data\" />
     <Folder Include="wwwroot\images\" />

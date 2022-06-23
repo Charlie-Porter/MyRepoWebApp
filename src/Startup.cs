@@ -12,6 +12,7 @@ using Dna.AspNet;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.CookiePolicy;
+using MyRepoWebApp.Models;
 
 namespace MyRepoWebApp
 {
@@ -27,7 +28,9 @@ namespace MyRepoWebApp
 
         public void ConfigureServices(IServiceCollection services)
         {
-                       
+
+            services.AddControllers().AddJsonOptions(options =>
+            { options.JsonSerializerOptions.PropertyNameCaseInsensitive = false; });
 
             //Add SendGrid email sender
             services.AddSendGridEmailSender();
@@ -80,7 +83,8 @@ namespace MyRepoWebApp
             
 
             services.AddDbContext<MyRepoWebAppContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MyRepoWebAppContext")));
+                    options.UseSqlServer(Configuration.GetConnectionString("MyRepoWebAppContext")));         
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
