@@ -45,9 +45,9 @@ namespace MyRepoWebApp.Models.api
         #endregion
     }
 
+    #region API response 
     /// <summary>
-    /// The response for all Web API calls made
-    /// with a specific type of known response
+    /// The response for all Web API calls made with a specific type of known response
     /// </summary>
     /// <typeparam name="T">The specific type of server response</typeparam>
     public class ApiResponse<T> : ApiResponse
@@ -57,4 +57,6 @@ namespace MyRepoWebApp.Models.api
         /// </summary>
         public new T Response { get => (T)base.Response; set => base.Response = value; }
     }
+    #endregion
+
 }

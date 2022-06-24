@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MyRepoWebApp.Models;
+using MyRepoWebApp.Models.api;
 
 namespace MyRepoWebApp.Data
 {

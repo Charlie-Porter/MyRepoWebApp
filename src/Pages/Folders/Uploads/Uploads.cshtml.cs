@@ -14,6 +14,7 @@ using System.IO;
 using System;
 using System.Drawing;
 using System.Text;
+using MyRepoWebApp.Models.api;
 
 namespace MyRepoWebApp.Pages.Uploads
 {
