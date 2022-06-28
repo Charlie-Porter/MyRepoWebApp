@@ -306,24 +306,24 @@ namespace MyRepoWebApp.Controllers
 
         #region LoginAsync
 
-        [Route("api/Login/{UserId}/{Password}")]
-        [HttpGet]
+        [Route("api/Login")]
+        [HttpPost]
         /// <summary>
         /// For logging into the application and returns data if the passed userid and password is valid 
         /// </summary>
         /// <returns>  UserId, Verified, IsAdmin, Email</returns>
+        /// <remarks>This post will accept simple parameters on the query string eg /api/Login?UserId=Someone@email.io&Password=password</remarks>
         public async Task<ApiResponse<LoginApiModel>> LoginAsync(string UserId, string Password)
-        {
-        
+        {                       
             try
-            {
+            {                
                 // Create a claims principle for multiple claim identites 
                 ClaimsPrincipal principal = HttpContext.User as ClaimsPrincipal;
 
                 // if user is not already authenicated
                 if (!principal.Identity.IsAuthenticated)
                 {
-                    // create a variable for the IQueryable crendtails data
+                    // create a variable for the IQueryable sredential data
                     var data = _context.CredentialModel.AsQueryable();
 
                     // check if passed UserId and Password is valid 
@@ -470,7 +470,7 @@ namespace MyRepoWebApp.Controllers
         #region LogoffAsync
 
         [Route("api/Logoff/{UserId}")]
-        [HttpGet]
+        [HttpPost]
         /// <summary>
         /// Logs a user off via an API
         /// </summary>

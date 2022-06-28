@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyRepoWebApp", "src\MyRepoWebApp.csproj", "{506E7770-39F0-4B88-BF7E-9FE772766822}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyRepoFunctionApp", "MyRepoFunctionApp\MyRepoFunctionApp.csproj", "{A7429986-6E94-465B-BE36-6BBC60D8FBA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{506E7770-39F0-4B88-BF7E-9FE772766822}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{506E7770-39F0-4B88-BF7E-9FE772766822}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{506E7770-39F0-4B88-BF7E-9FE772766822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7429986-6E94-465B-BE36-6BBC60D8FBA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7429986-6E94-465B-BE36-6BBC60D8FBA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7429986-6E94-465B-BE36-6BBC60D8FBA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7429986-6E94-465B-BE36-6BBC60D8FBA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
